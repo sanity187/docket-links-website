@@ -35,7 +35,7 @@ export function DesktopNav({ locale }: DesktopNavProps) {
         <Link href={localizedPath(locale, "/download")}>
           <Button variant="glow" size="sm" className="gap-1.5 font-semibold">
             <Download className="h-4 w-4" />
-            <span>{locale === "es" ? "Descargar v1.14.1" : "Download v1.14.1"}</span>
+            <span>{locale === "es" ? "Descargar" : "Download"}</span>
           </Button>
         </Link>
       </div>

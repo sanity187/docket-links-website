@@ -6,18 +6,18 @@ export interface LocalizedMegaMenuLink {
   href: string;
   badge?: I18nString;
   iconName:
-    | "cpu"
-    | "database"
-    | "shield"
-    | "zap"
-    | "scale"
-    | "mail"
-    | "filter"
-    | "users"
-    | "terminal"
-    | "car"
-    | "building"
-    | "download";
+  | "cpu"
+  | "database"
+  | "shield"
+  | "zap"
+  | "scale"
+  | "mail"
+  | "filter"
+  | "users"
+  | "terminal"
+  | "car"
+  | "building"
+  | "download";
 }
 
 export interface LocalizedMegaMenuCategory {
@@ -48,7 +48,7 @@ export const megaMenuContent = {
           es: "Consultas de menos de 10ms sobre más de 1,000,000 de casos con el poder del software de escritorio instalado y monitoreo continuo.",
         },
         href: "/download",
-        cta: { en: "Download v1.14.1", es: "Descargar v1.14.1" },
+        cta: { en: "Download", es: "Descargar" },
       },
       links: [
         {

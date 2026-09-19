@@ -44,19 +44,19 @@ export function PlatformDownloadCards({ locale }: PlatformDownloadCardsProps) {
             <CardTitle className="mt-4 text-xl">
               {platform.name}
             </CardTitle>
-            <CardDescription className="text-xs">
+            <CardDescription className="text-xs mb-4">
               {t(platform.osLabel, locale)}
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-start gap-2 rounded-xl bg-muted/40 p-3 text-xs text-dim">
+          <CardContent className="flex flex-col gap-4 flex-1">
+            <div className="flex items-start gap-2 rounded-xl bg-muted/40 p-3 text-xs text-dim grow">
               <HardDrive className="h-4 w-4 shrink-0 mt-0.5 text-primary" />
               <span>{t(platform.requirements, locale)}</span>
             </div>
 
             {/* Primary Download */}
-            <a href={platform.primaryUrl} className="w-full">
+            <a href={platform.primaryUrl} className="w-full mt-auto">
               <Button variant="default" size="lg" className="w-full gap-2 font-bold justify-center">
                 <Download className="h-4 w-4" />
                 <span>{t(platform.primaryLabel, locale)}</span>
@@ -64,25 +64,27 @@ export function PlatformDownloadCards({ locale }: PlatformDownloadCardsProps) {
             </a>
 
             {/* Secondary Formats */}
-            {platform.secondaryOptions.length > 0 && (
-              <div className="flex flex-col gap-2 pt-2 border-t border-line">
-                <span className="text-[11px] font-semibold text-dim">
-                  {locale === "es" ? "Instaladores alternativos:" : "Alternative packages:"}
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {platform.secondaryOptions.map((opt, idx) => (
-                    <a
-                      key={idx}
-                      href={opt.url}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-muted/50 px-2.5 py-1 text-xs text-foreground hover:bg-muted hover:border-primary/40 transition-colors"
-                    >
-                      <Download className="h-3 w-3 text-dim" />
-                      <span>{t(opt.label, locale)}</span>
-                    </a>
-                  ))}
+            <div className="min-h-[88px] flex flex-col justify-start">
+              {platform.secondaryOptions.length > 0 && (
+                <div className="flex flex-col gap-2 pt-2 border-t border-line">
+                  <span className="text-[11px] font-semibold text-dim">
+                    {locale === "es" ? "Instaladores alternativos:" : "Alternative packages:"}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {platform.secondaryOptions.map((opt, idx) => (
+                      <a
+                        key={idx}
+                        href={opt.url}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-muted/50 px-2.5 py-1 text-xs text-foreground hover:bg-muted hover:border-primary/40 transition-colors"
+                      >
+                        <Download className="h-3 w-3 text-dim" />
+                        <span>{t(opt.label, locale)}</span>
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </CardContent>
 
           <CardFooter className="pt-2 text-[11px] text-dim flex items-center gap-1.5">

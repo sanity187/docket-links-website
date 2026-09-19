@@ -23,8 +23,8 @@ export const downloadContent = {
     es: "APLICACIÓN DE ESCRITORIO MULTIPLATAFORMA",
   },
   title: {
-    en: "Download DocketLinks Browser v1.14.1",
-    es: "Descargar DocketLinks Browser v1.14.1",
+    en: "Download",
+    es: "Descargar",
   },
   subtitle: {
     en: "Built with Rust and Tauri v2 for native desktop speed, instant search responsiveness, and far better performance than web apps. Free forever tier included.",
@@ -48,7 +48,7 @@ export const downloadContent = {
       recommendedExt: ".exe",
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_x64-setup.exe",
-      primaryLabel: { en: "Download Windows Installer (.exe)", es: "Descargar Instalador Windows (.exe)" },
+      primaryLabel: { en: "Download", es: "Descargar" },
       secondaryOptions: [
         {
           label: { en: "Enterprise MSI Package (.msi)", es: "Paquete Empresarial MSI (.msi)" },
@@ -70,7 +70,7 @@ export const downloadContent = {
       recommendedExt: ".app.tar.gz",
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_aarch64.app.tar.gz",
-      primaryLabel: { en: "Download for Apple Silicon (M1/M2/M3/M4)", es: "Descargar para Apple Silicon (M1/M2/M3/M4)" },
+      primaryLabel: { en: "Download", es: "Descargar" },
       secondaryOptions: [
         {
           label: { en: "macOS Intel 64-bit (.app.tar.gz)", es: "macOS Intel 64 bits (.app.tar.gz)" },
@@ -92,7 +92,7 @@ export const downloadContent = {
       recommendedExt: ".AppImage",
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_amd64.AppImage",
-      primaryLabel: { en: "Download AppImage (Universal Linux)", es: "Descargar AppImage (Linux Universal)" },
+      primaryLabel: { en: "Download", es: "Descargar" },
       secondaryOptions: [
         {
           label: { en: "Debian / Ubuntu (.deb)", es: "Debian / Ubuntu (.deb)" },
@@ -107,8 +107,8 @@ export const downloadContent = {
       ],
       architecture: "x86_64",
       requirements: {
-        en: "glibc 2.31+, WebKit2GTK 4.1, 4GB RAM",
-        es: "glibc 2.31+, WebKit2GTK 4.1, 4GB de RAM",
+        en: "glibc 2.31+, WebKit2GTK 4.1, 4GB RAM \n",
+        es: "glibc 2.31+, WebKit2GTK 4.1, 4GB de RAM \n",
       },
       iconName: "linux",
     },
@@ -131,7 +131,7 @@ export const downloadContent = {
       es: "Canal de consultas nativo optimizado para filtrado instantáneo en más de 2,000,000 de casos.",
     },
     {
-      en: "Support for automated DigitalOcean Spaces encrypted cloud backup synchronization.",
+      en: "Support for automated encrypted cloud backup synchronization.",
       es: "Soporte para copias de seguridad cifradas automáticas en DigitalOcean Spaces.",
     },
   ],
