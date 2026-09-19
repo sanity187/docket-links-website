@@ -42,65 +42,39 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           {/* Platform & Solutions Column */}
           <div className="flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              {locale === "es" ? "Plataforma" : "Platform"}
+              {t(footerContent.platformHeading, locale)}
             </h4>
             <ul className="flex flex-col gap-2 text-xs text-dim">
-              <li>
-                <Link href={localizedPath(locale, "/#features")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Expedientes en Tiempo Real" : "Real-Time Docket Feed"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/#technology")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Arquitectura Rust + SQLite" : "Rust + SQLite Architecture"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/pricing")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Planes y Precios" : "Pricing & Volume Rates"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/download")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Descargar Aplicación" : "Download Native App"}
-                </Link>
-              </li>
+              {footerContent.platformLinks.map((item, idx) => (
+                <li key={idx}>
+                  <Link href={localizedPath(locale, item.href)} className="hover:text-primary transition-colors">
+                    {t(item.title, locale)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal Practice Areas Column */}
           <div className="flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              {locale === "es" ? "Áreas de Práctica" : "Practice Areas"}
+              {t(footerContent.practiceAreasHeading, locale)}
             </h4>
             <ul className="flex flex-col gap-2 text-xs text-dim">
-              <li>
-                <Link href={localizedPath(locale, "/#features")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Defensa Penal (Título 18)" : "Criminal Defense (Title 18)"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/#features")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Tránsito y DUI (Título 75)" : "Traffic & DUI (Title 75)"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/#features")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Desahucios y Reclamos Civiles" : "Landlord-Tenant & Civil Claims"}
-                </Link>
-              </li>
-              <li>
-                <Link href={localizedPath(locale, "/#technology")} className="hover:text-primary transition-colors">
-                  {locale === "es" ? "Preclasificación Postal CASS" : "USPS CASS Direct Mail"}
-                </Link>
-              </li>
+              {footerContent.practiceAreasLinks.map((item, idx) => (
+                <li key={idx}>
+                  <Link href={localizedPath(locale, item.href)} className="hover:text-primary transition-colors">
+                    {t(item.title, locale)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact & Corporate Info Column */}
           <div className="flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              {locale === "es" ? "Contacto y Soporte" : "Contact & Support"}
+              {t(footerContent.contactHeading, locale)}
             </h4>
             <div className="flex flex-col gap-2 text-xs text-dim">
               <div className="flex items-center gap-2">
@@ -127,7 +101,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
                   rel="noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  GitHub Releases
+                  {t(footerContent.githubReleases, locale)}
                 </a>
               </div>
             </div>
@@ -139,7 +113,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
           <p>{t(footerContent.copyright, locale)}</p>
 
           <p className="max-w-md text-center sm:text-right text-[11px] leading-relaxed">
-            {t(footerContent.complianceNotice, locale)}
+            {/* {t(footerContent.complianceNotice, locale)} */}
           </p>
 
           <LanguageSwitcher />

@@ -5,7 +5,7 @@
   "acronym": "DL",
   "slogan": "Real-Time Court Docket Intelligence & Lead Automation",
   "descriptor": "Next-Generation Court Docket Lead Generation & Legal Workflow Automation",
-  "description": "Empower your law firm with automated court docket ingestion, instant lead qualification, CASS-certified USPS presorting, and high-performance cross-platform desktop speed.",
+  "description": "Empower your law firm with automated court docket monitoring, freshly filed cases pulled multiple times daily, instant lead qualification, CASS-certified USPS presorting, and high-performance cross-platform desktop speed.",
   "url": "https://docketlinks.com",
   "appUrl": "https://app.docketlinks.com",
   "phone": "(800) 555-LINK",
@@ -18,7 +18,7 @@
     "zip": "19107",
     "country": "US",
     "formatted": "1200 Market Street, Suite 1400, Philadelphia, PA 19107",
-    "jurisdiction": "Pennsylvania State & Common Pleas Courts"
+    "jurisdiction": "Pennsylvania Magisterial District Courts"
   },
   "release": {
     "latestVersion": "1.14.1",
@@ -34,8 +34,8 @@
     "linuxRpm": "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser-1.14.1-1.x86_64.rpm"
   },
   "stats": {
-    "activeCourts": "67 Counties",
-    "recordsProcessed": "2.4M+ Leads",
+    "activeCourts": "500+ Magisterial District Courts",
+    "recordsProcessed": "1,031,000+ Monitored Cases (28K+/week)",
     "queryLatency": "< 10ms",
     "directMailSavings": "30-50%",
     "supportedPlatforms": "Windows, macOS, Linux"

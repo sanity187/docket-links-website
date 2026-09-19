@@ -27,8 +27,8 @@ export const downloadContent = {
     es: "Descargar DocketLinks Browser v1.14.1",
   },
   subtitle: {
-    en: "Built with Rust and Tauri v2 for native desktop speed, instant local search, and offline SQLite resilience. Free forever tier included.",
-    es: "Construido con Rust y Tauri v2 para máxima velocidad nativa, búsqueda local instantánea y base de datos SQLite sin conexión. Incluye nivel gratuito de por vida.",
+    en: "Built with Rust and Tauri v2 for native desktop speed, instant search responsiveness, and far better performance than web apps. Free forever tier included.",
+    es: "Construido con Rust y Tauri v2 para máxima velocidad nativa, búsqueda instantánea y un rendimiento muy superior al de las aplicaciones web. Incluye nivel gratuito de por vida.",
   },
   detectingBadge: {
     en: "Auto-detected for your operating system",
@@ -127,8 +127,8 @@ export const downloadContent = {
       es: "Notificaciones de bloqueo de caso entre abogados para evitar contactos duplicados.",
     },
     {
-      en: "Optimized local SQLite queries for instantaneous filtering across 2,000,000+ court records.",
-      es: "Consultas SQLite locales optimizadas para filtrado instantáneo en más de 2,000,000 de casos.",
+      en: "Optimized native query pipeline for instantaneous filtering across 2,000,000+ court records.",
+      es: "Canal de consultas nativo optimizado para filtrado instantáneo en más de 2,000,000 de casos.",
     },
     {
       en: "Support for automated DigitalOcean Spaces encrypted cloud backup synchronization.",

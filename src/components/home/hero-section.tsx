@@ -4,6 +4,7 @@ import { type Locale } from "@/lib/i18n/config";
 import { localizedPath } from "@/lib/i18n/paths";
 import { t } from "@/lib/i18n/resolve";
 import { homeContent } from "@/lib/content/home";
+import { commonActions } from "@/lib/content/common";
 import { Eyebrow } from "@/components/primitives/eyebrow";
 import { Button } from "@/components/ui/button";
 import { HeroDownloadButton } from "@/components/download/hero-download-button";
@@ -53,7 +54,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
 
           <Link href={localizedPath(locale, "/pricing")}>
             <Button variant="outline" size="lg" className="rounded-xl px-6 font-semibold gap-2">
-              <span>{locale === "es" ? "Ver Planes y Precios" : "Explore Pricing Plans"}</span>
+              <span>{t(commonActions.viewPricing, locale)}</span>
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

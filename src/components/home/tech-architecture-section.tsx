@@ -120,7 +120,7 @@ export function TechArchitectureSection({ locale }: TechArchitectureSectionProps
               <ul className="flex flex-col gap-3 text-xs text-dim">
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="text-foreground">{isEs ? "Motor SQLite local con búsquedas instantáneas en menos de 10 milisegundos" : "Local relational SQLite engine delivering sub-10ms instant queries"}</span>
+                  <span className="text-foreground">{isEs ? "Rendimiento nativo de escritorio con búsquedas instantáneas y sin retrasos de navegador" : "Native installed desktop performance delivering sub-10ms queries with zero web lag"}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />

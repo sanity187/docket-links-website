@@ -45,7 +45,26 @@ export interface LocalizedPricingPlan {
   highlights?: I18nString[];
   cta: I18nString;
   ctaHref: string;
+  // Dynamic Stripe metadata
+  priceId?: string;
+  productId?: string;
+  isLive?: boolean;
+  currency?: string;
+  interval?: string;
 }
+
+export interface StripeAddonPlan {
+  id: string;
+  productId: string;
+  priceId: string;
+  name: I18nString;
+  description: I18nString;
+  unitAmountCents: number;
+  unitPriceDollars: number;
+  currency: string;
+  minQuantity: number;
+}
+
 
 export interface LocalizedFeatureItem {
   id: string;

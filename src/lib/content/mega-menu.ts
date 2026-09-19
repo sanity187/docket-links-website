@@ -39,25 +39,25 @@ export const megaMenuContent = {
     {
       id: "product",
       label: { en: "Platform", es: "Plataforma" },
-      href: "/#features",
+      href: "/features",
       featured: {
         tag: { en: "NATIVE TAURI V2 + RUST", es: "NATIVO TAURI V2 + RUST" },
         title: { en: "Engineered for Raw Speed", es: "Diseñado para Máxima Velocidad" },
         description: {
-          en: "Sub-10ms queries over 2.4M court records with local SQLite caching and real-time scrapers.",
-          es: "Consultas de menos de 10ms sobre 2.4M de expedientes judiciales con base de datos SQLite local.",
+          en: "Sub-10ms queries over 1,000,000+ court cases with native desktop power and continuous docket monitoring.",
+          es: "Consultas de menos de 10ms sobre más de 1,000,000 de casos con el poder del software de escritorio instalado y monitoreo continuo.",
         },
         href: "/download",
         cta: { en: "Download v1.14.1", es: "Descargar v1.14.1" },
       },
       links: [
         {
-          title: { en: "Real-Time Docket Feed", es: "Expedientes en Tiempo Real" },
+          title: { en: "Daily Docket Feed", es: "Expedientes Actualizados Diariamente" },
           description: {
-            en: "Continuous ingestion from MDJ and Common Pleas courts",
-            es: "Monitoreo continuo de tribunales MDJ y Common Pleas",
+            en: "Freshly filed cases pulled multiple times daily from all 500+ Magisterial District Courts",
+            es: "Casos recién radicados obtenidos varias veces al día de los más de 500 tribunales de distrito magisterial",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "zap",
           badge: { en: "Live", es: "En Vivo" },
         },
@@ -67,7 +67,7 @@ export const megaMenuContent = {
             en: "Instant sorting by Title 18, Title 75, and charge severity",
             es: "Filtrado automático por Título 18, Título 75 y gravedad",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "scale",
         },
         {
@@ -76,7 +76,7 @@ export const megaMenuContent = {
             en: "Multi-attorney team locking so no prospect is double-contacted",
             es: "Bloqueo por equipo para evitar duplicidad de contactos",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "users",
         },
         {
@@ -85,7 +85,7 @@ export const megaMenuContent = {
             en: "Cut postage costs 30-50% with automated tray and barcode sorting",
             es: "Reduzca 30-50% en franqueo postal con clasificación automática",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "mail",
           badge: { en: "Save 40%", es: "Ahorro 40%" },
         },
@@ -94,13 +94,13 @@ export const megaMenuContent = {
     {
       id: "practice-areas",
       label: { en: "Practice Areas", es: "Áreas Legales" },
-      href: "/#features",
+      href: "/features",
       featured: {
         tag: { en: "TARGETED LEGAL MARKETING", es: "MERCADEO LEGAL DIRIGIDO" },
         title: { en: "Reach Clients First", es: "Llegue Primero al Cliente" },
         description: {
-          en: "Filter by exact statute and county within minutes of court docket filing.",
-          es: "Filtre por estatuto y condado exacto minutos después de radicado el caso.",
+          en: "Filter by exact statute and county as freshly filed cases are updated multiple times daily.",
+          es: "Filtre por estatuto y condado exacto con casos recién radicados actualizados varias veces al día.",
         },
         href: "/pricing",
         cta: { en: "Explore Plans", es: "Explorar Planes" },
@@ -112,7 +112,7 @@ export const megaMenuContent = {
             en: "Felonies, Misdemeanors, Title 18 offenses, and preliminary hearings",
             es: "Delitos graves, delitos menores y audiencias preliminares",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "shield",
         },
         {
@@ -121,7 +121,7 @@ export const megaMenuContent = {
             en: "Title 75 moving violations, license suspensions, and DUIs",
             es: "Violaciones del Título 75, suspensiones de licencia y DUI",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "car",
         },
         {
@@ -130,7 +130,7 @@ export const megaMenuContent = {
             en: "Evictions, money judgments, and contract disputes",
             es: "Desahucios, reclamos dinerarios y disputas contractuales",
           },
-          href: "/#features",
+          href: "/features",
           iconName: "building",
         },
         {
@@ -149,11 +149,11 @@ export const megaMenuContent = {
       label: { en: "Technology", es: "Tecnología" },
       href: "/#technology",
       featured: {
-        tag: { en: "ZERO CLOUD LATENCY", es: "CERO LATENCIA EN LA NUBE" },
-        title: { en: "Local SQLite + Cloud Sync", es: "SQLite Local + Sincronización" },
+        tag: { en: "NATIVE DESKTOP PERFORMANCE", es: "RENDIMIENTO DE ESCRITORIO" },
+        title: { en: "Desktop Speed vs Web Apps", es: "Velocidad de Escritorio vs Web" },
         description: {
-          en: "Store millions of records on your local machine with end-to-end encrypted tenant storage.",
-          es: "Almacene millones de registros en su equipo local con cifrado de extremo a extremo.",
+          en: "Installed desktop software delivers lightning-fast responsiveness and far better performance than browser-based apps.",
+          es: "Una aplicación de escritorio instalada ofrece respuesta instantánea y mucho mejor rendimiento que las lentas aplicaciones web.",
         },
         href: "/#technology",
         cta: { en: "See Architecture", es: "Ver Arquitectura" },
@@ -169,13 +169,13 @@ export const megaMenuContent = {
           iconName: "cpu",
         },
         {
-          title: { en: "Local SQLite Engine", es: "Motor SQLite Local" },
+          title: { en: "Desktop Performance Power", es: "Poder de Rendimiento Nativo" },
           description: {
-            en: "Instant multi-column filtering without API rate limits or lag",
-            es: "Filtrado instantáneo sin límites de velocidad de API ni retrasos",
+            en: "Installed desktop experience provides instant filtering and much better speed than browser tabs",
+            es: "La experiencia de escritorio instalada brinda filtros inmediatos y mayor velocidad que las pestañas del navegador",
           },
           href: "/#technology",
-          iconName: "database",
+          iconName: "zap",
         },
         {
           title: { en: "Tenant-Level Encryption", es: "Cifrado a Nivel de Organización" },
