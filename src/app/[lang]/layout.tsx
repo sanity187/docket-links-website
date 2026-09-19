@@ -40,7 +40,7 @@ export async function generateMetadata({
       "traffic ticket leads",
       "USPS CASS presort",
       "law firm direct mail",
-      "docket scraping",
+      "docket monitoring",
     ],
     authors: [{ name: siteConfig.legalName }],
     creator: siteConfig.legalName,

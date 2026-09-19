@@ -7,46 +7,46 @@ export const homeContent = {
       es: "INTELIGENCIA DE EXPEDIENTES JUDICIALES DE PENSILVANIA",
     },
     titlePrimary: {
-      en: "Automated Court Leads.",
-      es: "Casos Judiciales Automatizados.",
+      en: "Marketing Leads for Law Firms.",
+      es: "Prospectos de Mercadeo para Bufetes.",
     },
     titleSecondary: {
       en: "Raw Desktop Speed.",
       es: "Velocidad Nativa de Escritorio.",
     },
     subtitle: {
-      en: "Supercharge your law firm's case acquisition. Continuous docket scraping across Pennsylvania, instant statute & charge classification, and automated USPS presorting—powered by a high-performance native Rust & Tauri desktop application.",
-      es: "Potencie la captación de casos de su bufete. Extracción continua de expedientes en Pensilvania, clasificación instantánea de cargos y preclasificación postal USPS con una aplicación nativa en Rust y Tauri.",
+      en: "DocketLinks delivers high-intent marketing leads for law firms by monitoring Pennsylvania court dockets multiple times daily. We capture defendant filings and enrich that data with verified mailing addresses, phone numbers, and emails—allowing attorneys to download targeted lead lists and launch high-converting direct-mail and email solicitation campaigns.",
+      es: "DocketLinks entrega prospectos de mercadeo de alta intención para bufetes monitoreando expedientes de Pensilvania varias veces al día. Capturamos las radicaciones de acusados y enriquecemos esos datos con direcciones, teléfonos y correos verificados, permitiendo a los abogados descargar listas específicas y lanzar campañas de correo directo y captación con alta conversión.",
     },
     badge: {
       en: "Unlimited Team Members on Every Plan • Built with Rust & Tauri v2",
       es: "Usuarios Ilimitados en Cada Plan • Construido con Rust y Tauri v2",
     },
     statsCallout: {
-      en: "Over 2.4M court records indexed with sub-10ms local SQLite query latency.",
-      es: "Más de 2.4M de expedientes indexados con latencia de consulta local inferior a 10ms.",
+      en: "Over 1,031,000+ court cases monitored this year (~4,000 new filings daily across 500+ courts).",
+      es: "Más de 1,031,000 casos judiciales monitoreados este año (~4,000 radicaciones diarias en más de 500 cortes).",
     },
   },
   stats: [
     {
-      value: { en: "67", es: "67" },
-      label: { en: "PA Counties Covered", es: "Condados de PA Cubiertos" },
-      description: { en: "Real-time coverage across all Magisterial District & Common Pleas courts", es: "Cobertura en tribunales de distrito magisterial y tribunales comunes" },
+      value: { en: "1,031,000+", es: "1,031,000+" },
+      label: { en: "Cases Monitored This Year", es: "Casos Monitoreados Este Año" },
+      description: { en: "Over 28,300 freshly filed cases captured weekly across Pennsylvania", es: "Más de 28,300 casos recién radicados capturados semanalmente en Pensilvania" },
     },
     {
-      value: { en: "< 10ms", es: "< 10ms" },
-      label: { en: "Local Query Latency", es: "Latencia de Consulta Local" },
-      description: { en: "Native SQLite database running directly on your hardware without web lag", es: "Base SQLite nativa ejecutándose en su equipo sin retrasos de navegador" },
+      value: { en: "~4,000", es: "~4,000" },
+      label: { en: "New Filings Daily", es: "Nuevas Radicaciones al Día" },
+      description: { en: "Daily averages: 3,072 traffic, 398 civil, and 346 criminal cases", es: "Promedios diarios: 3,072 de tránsito, 398 civiles y 346 penales" },
+    },
+    {
+      value: { en: "500+", es: "500+" },
+      label: { en: "Magisterial District Courts", es: "Tribunales de Distrito Magisterial" },
+      description: { en: "Continuous monitoring across 500+ Pennsylvania courts—impossible to track manually", es: "Monitoreo continuo en más de 500 tribunales de Pensilvania, imposible de rastrear manualmente" },
     },
     {
       value: { en: "30-50%", es: "30-50%" },
       label: { en: "Direct Mail Savings", es: "Ahorro en Correo Directo" },
       description: { en: "Automated USPS CASS certification and carrier route tray presorting", es: "Certificación CASS y preclasificación postal por rutas de cartero" },
-    },
-    {
-      value: { en: "Unlimited", es: "Ilimitados" },
-      label: { en: "Team Members", es: "Miembros de Equipo" },
-      description: { en: "No per-seat licensing penalties. Your entire firm collaborates freely", es: "Sin tarifas por usuario. Todo su equipo colabora sin costo adicional" },
     },
   ] as LocalizedStatItem[],
   techSection: {
@@ -59,8 +59,8 @@ export const homeContent = {
       es: "Por Qué las Firmas Modernas Superan las Aplicaciones Web",
     },
     subtitle: {
-      en: "Traditional web-based lead portals crash and throttle when handling hundreds of thousands of docket records. DocketLinks is built as a native desktop application with Rust and Tauri v2, pairing local raw computing power with automated cloud ingestion.",
-      es: "Los portales web tradicionales se congelan y limitan cuando manejan cientos de miles de expedientes. DocketLinks es una aplicación nativa de escritorio construida con Rust y Tauri v2.",
+      en: "Traditional web-based lead portals crash and throttle when handling large case volumes. DocketLinks gives law firms an installed desktop application to filter, enrich, and export legal marketing leads with raw computing speed.",
+      es: "Los portales web tradicionales se congelan cuando manejan grandes volúmenes de casos. DocketLinks brinda a los bufetes una aplicación de escritorio instalada para filtrar, enriquecer y exportar prospectos de mercadeo legal con máxima velocidad.",
     },
     pillars: [
       {
@@ -74,24 +74,24 @@ export const homeContent = {
         iconName: "cpu",
       },
       {
-        id: "sqlite",
-        title: { en: "Embedded SQLite Engine", es: "Motor SQLite Embebido" },
+        id: "desktop-performance",
+        title: { en: "Installed Desktop Speed", es: "Velocidad de Escritorio Instalado" },
         description: {
-          en: "Every record is indexed locally in a relational SQLite database. Perform complex multi-statute regex searches with zero network latency and offline accessibility.",
-          es: "Cada caso se indexa localmente en SQLite. Realice búsquedas complejas con expresiones regulares sin depender de la velocidad de Internet.",
+          en: "An installed desktop experience delivers far superior performance, immediate responsiveness, and zero browser tab bloat compared to sluggish web apps.",
+          es: "Una experiencia de escritorio instalada ofrece un rendimiento muy superior, respuesta inmediata y sin la lentitud de las aplicaciones web en el navegador.",
         },
-        badge: { en: "< 10ms Search", es: "Búsqueda < 10ms" },
-        iconName: "database",
+        badge: { en: "< 10ms Response", es: "Respuesta < 10ms" },
+        iconName: "zap",
       },
       {
-        id: "scrapers",
-        title: { en: "Continuous Ingestion Pipeline", es: "Pipeline de Extracción Continua" },
+        id: "docket-monitoring",
+        title: { en: "Continuous Docket Monitoring", es: "Monitoreo Continuo de Expedientes" },
         description: {
-          en: "Automated distributed scrapers monitor docket registries 24/7. When a new filing hits a Pennsylvania courthouse, it is parsed and verified within minutes.",
-          es: "Scrapers automatizados monitorean registros judiciales 24/7. Nuevos casos radicados en Pensilvania se procesan y validan en minutos.",
+          en: "Automated monitoring continuously tracks court registries 24/7, pulling in freshly filed cases multiple times daily so your firm never misses incoming legal filings.",
+          es: "Sistemas automatizados monitorean registros judiciales 24/7, obteniendo casos recién radicados varias veces al día para que su bufete nunca pierda nuevas radicaciones.",
         },
-        badge: { en: "Real-Time", es: "Tiempo Real" },
-        iconName: "zap",
+        badge: { en: "Multiple Times Daily", es: "Varias Veces al Día" },
+        iconName: "clock",
       },
       {
         id: "presort",
@@ -107,54 +107,54 @@ export const homeContent = {
   },
   workflow: {
     eyebrow: {
-      en: "END-TO-END AUTOMATION",
-      es: "AUTOMATIZACIÓN INTEGRAL",
+      en: "HOW LAW FIRMS WIN CASES",
+      es: "CÓMO LAS FIRMAS CAPTAN CASOS",
     },
     title: {
-      en: "From Court Docket to Retained Client in 4 Steps",
-      es: "Del Expediente Judicial al Cliente en 4 Pasos",
+      en: "From Court Docket to Direct-Mail Campaign in 4 Steps",
+      es: "Del Expediente Judicial a la Campaña en 4 Pasos",
     },
     subtitle: {
-      en: "DocketLinks handles every step from courthouse scraping to postal barcoding, giving your firm the competitive first-mover advantage.",
-      es: "DocketLinks gestiona cada etapa, desde la extracción judicial hasta el código de barras postal, dándole a su firma una ventaja decisiva.",
+      en: "DocketLinks handles docket monitoring and contact enrichment so your firm can easily filter, download, and launch targeted direct-mail and email outreach campaigns.",
+      es: "DocketLinks gestiona el monitoreo de expedientes y el enriquecimiento de contactos para que su bufete pueda filtrar, descargar y lanzar fácilmente campañas de correo directo y captación.",
     },
     steps: [
       {
         step: "01",
-        title: { en: "Continuous Docket Ingestion", es: "Extracción Continua de Expedientes" },
+        title: { en: "Daily Docket Monitoring", es: "Monitoreo Diario de Expedientes" },
         description: {
-          en: "Our automated scrapers continuously harvest filings from Pennsylvania MDJ and Common Pleas courts, extracting defendant details, charges, and hearing schedules.",
-          es: "Nuestros scrapers extraen continuamente radicaciones de tribunales MDJ y Common Pleas, obteniendo acusados, cargos y audiencias.",
+          en: "We monitor all 500+ Pennsylvania Magisterial District Courts multiple times daily, capturing freshly filed criminal, traffic, civil, and landlord-tenant dockets with defendant names and charges.",
+          es: "Monitoreamos más de 500 tribunales de distrito magisterial de Pensilvania varias veces al día, capturando expedientes penales, de tránsito, civiles y de inquilinato recién radicados con nombres de acusados y cargos.",
         },
-        highlight: { en: "Real-time automated scraper network", es: "Red automatizada en tiempo real" },
-        iconName: "download",
+        highlight: { en: "Updated multiple times daily", es: "Actualizado varias veces al día" },
+        iconName: "clock",
       },
       {
         step: "02",
-        title: { en: "Statute & Severity Classification", es: "Clasificación por Estatuto y Gravedad" },
+        title: { en: "Contact Enrichment", es: "Enriquecimiento de Contactos" },
         description: {
-          en: "DocketLinks automatically categorizes charges into Title 18 (Crimes Code), Title 75 (Vehicle Code), Title 35 (Drug Violations), or Civil/Tenant disputes.",
-          es: "Clasificación automática en Título 18 (Código Penal), Título 75 (Tránsito), Título 35 (Sustancias) o litigios de inquilinos y civiles.",
+          en: "Raw court records lack contact details. Our proprietary software cross-references multiple public record sources to uncover verified mailing addresses, phone numbers, and emails for defendants in need of counsel.",
+          es: "Los expedientes judiciales públicos carecen de datos de contacto. Nuestro software propietario cruza múltiples registros públicos para descubrir direcciones postales, teléfonos y correos verificados de acusados que necesitan representación.",
         },
-        highlight: { en: "Filter by exact statute and charge grade", es: "Filtro por estatuto exacto y grado" },
-        iconName: "scale",
+        highlight: { en: "Verified addresses & contact info", es: "Direcciones y contactos verificados" },
+        iconName: "search",
       },
       {
         step: "03",
-        title: { en: "Multi-Attorney Lead Claiming", es: "Reclamo y Asignación de Casos" },
+        title: { en: "Filter & Download in Desktop App", es: "Filtre y Descargue en la Aplicación" },
         description: {
-          en: "Attorneys and staff claim leads with a single click. Our collision lock prevents double solicitation, tracking follow-up notes and assignment history.",
-          es: "Los abogados reclaman prospectos con un clic. El bloqueo de colisión evita solicitudes duplicadas y guarda notas de seguimiento.",
+          en: "Browse leads inside the high-speed desktop app. Filter by statute, charge grade, or county, and claim the exact cases you want with team collision locks to prevent duplicate solicitations.",
+          es: "Explore prospectos dentro de la aplicación de escritorio de alta velocidad. Filtre por estatuto, gravedad de cargo o condado, y reclame los casos exactos que desea con bloqueo de colisión para evitar contactos duplicados.",
         },
-        highlight: { en: "Team collision prevention & notes", es: "Prevención de colisiones y notas" },
+        highlight: { en: "Claim & download only what you need", es: "Reclame y descargue solo lo que necesita" },
         iconName: "users",
       },
       {
         step: "04",
-        title: { en: "CASS Presort & 1-Click Export", es: "Preclasificación CASS y Exportación" },
+        title: { en: "Launch Direct-Mail & Email Campaigns", es: "Lance Campañas de Correo y Email" },
         description: {
-          en: "Standardize addresses with USPS CASS certification and export pre-sorted recipient lists ready for bulk postage discounts and mail houses.",
-          es: "Estandarice direcciones con certificación CASS y exporte listas preclasificadas listas para tarifas postales reducidas de USPS.",
+          en: "Export USPS CASS-certified recipient lists pre-sorted for 30-50% postal discounts, or export clean CSV spreadsheets ready for your direct-mail print house and marketing outreach.",
+          es: "Exporte listas certificadas por CASS de USPS preclasificadas con ahorros del 30-50% en franqueo, o descargue archivos CSV listos para su imprenta de correo directo y campañas de mercadeo.",
         },
         highlight: { en: "Save 30-50% on every mail piece", es: "Ahorre 30-50% en cada carta enviada" },
         iconName: "mail",
@@ -168,8 +168,18 @@ export const homeContent = {
         es: "¿Qué tribunales y jurisdicciones están cubiertos?",
       },
       answer: {
-        en: "DocketLinks currently covers all 67 Pennsylvania counties, including Magisterial District Courts (MDJ), Philadelphia Municipal Court, and Courts of Common Pleas for criminal, traffic, summary, and landlord-tenant filings.",
-        es: "DocketLinks cubre actualmente los 67 condados de Pensilvania, incluyendo tribunales de distrito magisterial (MDJ), tribunal municipal de Filadelfia y tribunales de causas comunes (Common Pleas).",
+        en: "DocketLinks monitors all 500+ Magisterial District Courts (MDJ) across Pennsylvania for criminal, traffic, non-traffic, and landlord-tenant filings.",
+        es: "DocketLinks monitorea los más de 500 tribunales de distrito magisterial (MDJ) de Pensilvania para casos penales, de tránsito, no de tránsito e inquilinato.",
+      },
+    },
+    {
+      question: {
+        en: "What is the difference between a lead and an enrichment?",
+        es: "¿Cuál es la diferencia entre un prospecto (lead) y un enriquecimiento (enrichment)?",
+      },
+      answer: {
+        en: "A lead is the raw court case filing (docket number, defendant name, charges, filing date, and court jurisdiction). Raw court records do not include verified defendant addresses, phone numbers, or email contact details. This is where DocketLinks proprietary software shines: we cross-reference multiple public record sources to determine verified mailing addresses, phone numbers, and email contact info for the defendant. Attorneys can then download these enriched leads and use them for direct-mail letters or email solicitation to individuals facing active legal proceedings with high buyer intent.",
+        es: "Un prospecto (lead) representa los datos crudos del expediente judicial (número de caso, nombre del demandado o imputado, cargos, fecha y juzgado). Los registros judiciales no incluyen direcciones postales, teléfonos ni correos electrónicos. Aquí es donde nuestro software propietario se destaca: cruzamos múltiples registros públicos para determinar direcciones postales, teléfonos y correos verificados del acusado. Los abogados pueden descargar estos prospectos enriquecidos y utilizarlos en cartas de correo directo o correos de captación dirigidos a personas que enfrentan procesos judiciales con alta intención de contratación.",
       },
     },
     {
@@ -203,4 +213,69 @@ export const homeContent = {
       },
     },
   ] as LocalizedFaqItem[],
+  appPreview: {
+    titlebarStatus: { en: "Native Engine Active (3ms)", es: "Motor Nativo Activo (3ms)" },
+    windowTitle: {
+      en: "DocketLinks Browser v1.14.1 — [PA Unified Judicial System Database]",
+      es: "DocketLinks Browser v1.14.1 — [Base de Datos Judicial Unificada de PA]",
+    },
+    tabs: {
+      all: { en: "All Leads (4)", es: "Todos los Casos (4)" },
+      traffic: { en: "Traffic & DUI", es: "Tránsito y DUI" },
+      criminal: { en: "Crimes (Title 18)", es: "Penal (Título 18)" },
+    },
+    actions: {
+      claimed: { en: "claimed", es: "reclamados" },
+      exportCass: { en: "USPS CASS Presort", es: "Exportar CASS USPS" },
+      claimButton: { en: "Claim Lead", es: "Reclamar Caso" },
+      claimedButton: { en: "Claimed", es: "Reclamado" },
+    },
+    tableHeaders: {
+      docketNumber: { en: "Docket Number", es: "No. Expediente" },
+      county: { en: "County", es: "Condado" },
+      primaryCharges: { en: "Primary Charges", es: "Cargos Principales" },
+      grade: { en: "Grade", es: "Grado" },
+      firmAction: { en: "Firm Action", es: "Acción de la Firma" },
+    },
+    analyticsTitle: {
+      en: "Live Pennsylvania Docket Monitor",
+      es: "Monitoreo en Vivo de Expedientes en Pensilvania",
+    },
+    analyticsSubtitle: {
+      en: "Year-to-date filing volume aggregated across 500+ Magisterial District Courts",
+      es: "Volumen acumulado del año agregado en más de 500 tribunales de distrito magisterial",
+    },
+    metricsStrip: [
+      {
+        value: "1,031,126",
+        label: { en: "Filed This Year", es: "Radicados Este Año" },
+        sub: { en: "Year to date", es: "Año acumulado" },
+      },
+      {
+        value: "28,300",
+        label: { en: "Filed This Week", es: "Esta Semana" },
+        sub: { en: "Past 7 days", es: "Últimos 7 días" },
+      },
+      {
+        value: "3,072 / day",
+        label: { en: "Avg Daily Traffic", es: "Tránsito Diario" },
+        sub: { en: "671,500 YTD", es: "671,500 este año" },
+      },
+      {
+        value: "398 / day",
+        label: { en: "Avg Daily Civil", es: "Civil Diario" },
+        sub: { en: "113,517 YTD", es: "113,517 este año" },
+      },
+      {
+        value: "346 / day",
+        label: { en: "Avg Daily Criminal", es: "Penal Diario" },
+        sub: { en: "85,766 YTD", es: "85,766 este año" },
+      },
+      {
+        value: "65,032",
+        label: { en: "Landlord / Tenant", es: "Inquilinato / Desahucio" },
+        sub: { en: "Filings YTD", es: "Radicaciones este año" },
+      },
+    ],
+  },
 };

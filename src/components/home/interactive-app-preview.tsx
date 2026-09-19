@@ -13,17 +13,21 @@ import {
   ChevronRight,
   Database,
   Terminal,
+  BarChart3,
 } from "lucide-react";
 import { type Locale } from "@/lib/i18n/config";
+import { t } from "@/lib/i18n/resolve";
+import { homeContent } from "@/lib/content/home";
 
 interface InteractiveAppPreviewProps {
   locale: Locale;
 }
 
 export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
-  const isEs = locale === "es";
   const [filterMode, setFilterMode] = useState<"all" | "criminal" | "traffic">("all");
   const [claimedIds, setClaimedIds] = useState<number[]>([101]);
+
+  const p = homeContent.appPreview;
 
   const mockLeads = [
     {
@@ -38,9 +42,9 @@ export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
     },
     {
       id: 102,
-      docket: "CP-51-CR-0003418-2026",
+      docket: "MJ-23101-CR-0000318-2026",
       defendant: "J. Kowalski",
-      county: "Philadelphia",
+      county: "Berks",
       charge: "18 § 3929 §§ A1 - Retail Theft - Take Merchandise",
       grade: "M1",
       type: "criminal",
@@ -89,13 +93,45 @@ export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
           <div className="h-3 w-3 rounded-full bg-amber-500/80" />
           <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
           <span className="ml-2 font-mono text-[11px] font-semibold text-dim">
-            DocketLinks Browser v1.14.1 — [PA Unified Judicial System Database]
+            {t(p.windowTitle, locale)}
           </span>
         </div>
 
         <div className="flex items-center gap-2 font-mono text-[11px] text-emerald-400">
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>{isEs ? "Motor SQLite Conectado (3ms)" : "Local SQLite Connected (3ms)"}</span>
+          <span>{t(p.titlebarStatus, locale)}</span>
+        </div>
+      </div>
+
+      {/* Live App Analytics Ribbon (Real Data from DocketLinks Browser) */}
+      <div className="border-b border-line bg-panel-muted/30 p-3 sm:px-6">
+        <div className="flex items-center justify-between gap-2 mb-2.5">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+            <BarChart3 className="h-3.5 w-3.5 text-primary" />
+            <span>{t(p.analyticsTitle, locale)}</span>
+          </div>
+          <span className="text-[10px] text-dim hidden sm:inline">
+            {t(p.analyticsSubtitle, locale)}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          {p.metricsStrip.map((metric, idx) => (
+            <div
+              key={idx}
+              className="rounded-xl border border-line bg-panel/60 p-2 text-left transition-colors hover:border-line-strong"
+            >
+              <div className="text-xs sm:text-sm font-black text-foreground tracking-tight">
+                {metric.value}
+              </div>
+              <div className="text-[10px] font-semibold text-primary truncate">
+                {t(metric.label, locale)}
+              </div>
+              <div className="text-[9px] text-dim truncate">
+                {t(metric.sub, locale)}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -106,43 +142,43 @@ export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
             <button
               type="button"
               onClick={() => setFilterMode("all")}
-              className={`px-3 py-1 rounded-md font-medium transition-colors ${
-                filterMode === "all" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim"
+              className={`px-3 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+                filterMode === "all" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim hover:text-foreground"
               }`}
             >
-              {isEs ? "Todos los Casos" : "All Leads (4)"}
+              {t(p.tabs.all, locale)}
             </button>
             <button
               type="button"
               onClick={() => setFilterMode("traffic")}
-              className={`px-3 py-1 rounded-md font-medium transition-colors ${
-                filterMode === "traffic" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim"
+              className={`px-3 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+                filterMode === "traffic" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim hover:text-foreground"
               }`}
             >
-              {isEs ? "Tránsito & DUI" : "Traffic & DUI"}
+              {t(p.tabs.traffic, locale)}
             </button>
             <button
               type="button"
               onClick={() => setFilterMode("criminal")}
-              className={`px-3 py-1 rounded-md font-medium transition-colors ${
-                filterMode === "criminal" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim"
+              className={`px-3 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+                filterMode === "criminal" ? "bg-panel text-primary shadow-xs font-bold" : "text-dim hover:text-foreground"
               }`}
             >
-              {isEs ? "Penal (Título 18)" : "Crimes (Title 18)"}
+              {t(p.tabs.criminal, locale)}
             </button>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="text-xs text-dim">
-            {claimedIds.length} {isEs ? "reclamados" : "claimed"}
+            {claimedIds.length} {t(p.actions.claimed, locale)}
           </span>
           <button
             type="button"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-primary/10 px-3 py-1 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-primary/10 px-3 py-1 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors cursor-pointer"
           >
             <FileSpreadsheet className="h-3.5 w-3.5" />
-            <span>{isEs ? "Exportar CASS USPS" : "USPS CASS Presort"}</span>
+            <span>{t(p.actions.exportCass, locale)}</span>
           </button>
         </div>
       </div>
@@ -152,11 +188,11 @@ export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
         <table className="w-full text-left text-xs border-collapse">
           <thead>
             <tr className="border-b border-line text-dim text-[11px] uppercase tracking-wider">
-              <th className="pb-3 font-semibold">{isEs ? "No. Expediente" : "Docket Number"}</th>
-              <th className="pb-3 font-semibold">{isEs ? "Condado" : "County"}</th>
-              <th className="pb-3 font-semibold">{isEs ? "Cargos Principales" : "Primary Charges"}</th>
-              <th className="pb-3 font-semibold text-center">{isEs ? "Grado" : "Grade"}</th>
-              <th className="pb-3 font-semibold text-right">{isEs ? "Estado" : "Firm Action"}</th>
+              <th className="pb-3 font-semibold">{t(p.tableHeaders.docketNumber, locale)}</th>
+              <th className="pb-3 font-semibold">{t(p.tableHeaders.county, locale)}</th>
+              <th className="pb-3 font-semibold">{t(p.tableHeaders.primaryCharges, locale)}</th>
+              <th className="pb-3 font-semibold text-center">{t(p.tableHeaders.grade, locale)}</th>
+              <th className="pb-3 font-semibold text-right">{t(p.tableHeaders.firmAction, locale)}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line/60">
@@ -202,10 +238,10 @@ export function InteractiveAppPreview({ locale }: InteractiveAppPreviewProps) {
                       {isClaimed ? (
                         <>
                           <CheckCircle className="h-3 w-3" />
-                          <span>{isEs ? "Reclamado" : "Claimed"}</span>
+                          <span>{t(p.actions.claimedButton, locale)}</span>
                         </>
                       ) : (
-                        <span>{isEs ? "Reclamar Caso" : "Claim Lead"}</span>
+                        <span>{t(p.actions.claimButton, locale)}</span>
                       )}
                     </button>
                   </td>

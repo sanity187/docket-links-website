@@ -1,93 +1,108 @@
 import { Check, Minus } from "lucide-react";
 import { type Locale } from "@/lib/i18n/config";
+import { t } from "@/lib/i18n/resolve";
+import { pricingContent } from "@/lib/content/pricing";
+import { LocalizedPricingPlan } from "@/lib/content/types";
 
 interface PricingComparisonTableProps {
   locale: Locale;
+  plans?: LocalizedPricingPlan[];
 }
 
-export function PricingComparisonTable({ locale }: PricingComparisonTableProps) {
-  const isEs = locale === "es";
+export function PricingComparisonTable({ locale, plans }: PricingComparisonTableProps) {
+  const starterPlan = plans?.find((p) => p.id === "starter");
+  const proPlan = plans?.find((p) => p.id === "pro");
+  const scalePlan = plans?.find((p) => p.id === "scale");
 
+  const leadUnit = t(pricingContent.cardLabels.leadUnit, locale);
+  const starterCpl = starterPlan
+    ? `$${(starterPlan.priceMonthly / starterPlan.monthlyLeads).toFixed(2)} / ${leadUnit}`
+    : `$0.60 / ${leadUnit}`;
+  const proCpl = proPlan
+    ? `$${(proPlan.priceMonthly / proPlan.monthlyLeads).toFixed(2)} / ${leadUnit}`
+    : `$0.60 / ${leadUnit}`;
+  const scaleCpl = scalePlan
+    ? `$${(scalePlan.priceMonthly / scalePlan.monthlyLeads).toFixed(2)} / ${leadUnit}`
+    : `$0.55 / ${leadUnit}`;
+
+  const ct = pricingContent.comparisonTable;
   const rows = [
     {
-      feature: isEs ? "Costo estimado por caso" : "Cost per lead",
-      free: "$0",
-      starter: "$0.65 / lead",
-      pro: "$0.60 / lead",
-      scale: "$0.55 / lead",
-      enterprise: "< $0.50 / lead",
+      feature: t(ct.rows.costPerLead, locale),
+      free: t(ct.rows.extraLeadRate, locale),
+      starter: starterCpl,
+      pro: proCpl,
+      scale: scaleCpl,
     },
     {
-      feature: isEs ? "Casos y enriquecimientos / mes" : "Monthly leads & enrichments",
-      free: "25",
-      starter: "500",
-      pro: "2,000",
-      scale: "10,000",
-      enterprise: "25,000+",
+      feature: t(ct.rows.monthlyLeads, locale),
+      free: "50",
+      starter: (starterPlan?.monthlyLeads ?? 500).toLocaleString(),
+      pro: (proPlan?.monthlyLeads ?? 5000).toLocaleString(),
+      scale: (scalePlan?.monthlyLeads ?? 10000).toLocaleString(),
     },
     {
-      feature: isEs ? "Límite diario de casos" : "Daily lead quota",
+      feature: t(ct.rows.dailyLeads, locale),
       free: "5",
       starter: "50",
-      pro: "200",
+      pro: "500",
       scale: "1,000",
-      enterprise: isEs ? "Personalizado" : "Custom",
     },
     {
-      feature: isEs ? "Miembros y usuarios de equipo" : "Team member logins",
-      free: isEs ? "Ilimitados" : "Unlimited",
-      starter: isEs ? "Ilimitados" : "Unlimited",
-      pro: isEs ? "Ilimitados" : "Unlimited",
-      scale: isEs ? "Ilimitados" : "Unlimited",
-      enterprise: isEs ? "Ilimitados" : "Unlimited",
+      feature: t(ct.rows.dailyExports, locale),
+      free: "5",
+      starter: "25",
+      pro: "100",
+      scale: "250",
     },
     {
-      feature: isEs ? "Preclasificación CASS USPS (Ahorro 30-50%)" : "USPS CASS Direct Mail Presort",
+      feature: t(ct.rows.aiLetters, locale),
       free: false,
-      starter: false,
-      pro: true,
-      scale: true,
-      enterprise: true,
+      starter: t(ct.rows.aiLettersStarter, locale),
+      pro: t(ct.rows.aiLettersPro, locale),
+      scale: t(ct.rows.aiLettersScale, locale),
     },
     {
-      feature: isEs ? "Bloqueo y asignación de casos entre abogados" : "Multi-attorney collision guard",
-      free: false,
-      starter: true,
-      pro: true,
-      scale: true,
-      enterprise: true,
-    },
-    {
-      feature: isEs ? "Perfiles de búsqueda guardados" : "Saved search profiles",
-      free: "3",
-      starter: "10",
-      pro: "50",
-      scale: isEs ? "Ilimitados" : "Unlimited",
-      enterprise: isEs ? "Ilimitados" : "Unlimited",
-    },
-    {
-      feature: isEs ? "Endpoints de webhooks automatizados" : "Webhook integration endpoints",
-      free: "0",
-      starter: "1",
-      pro: "5",
-      scale: "25",
-      enterprise: isEs ? "Ilimitados" : "Unlimited",
-    },
-    {
-      feature: isEs ? "Acceso a API REST / GraphQL" : "Full REST/GraphQL API access",
-      free: false,
-      starter: false,
-      pro: true,
-      scale: true,
-      enterprise: true,
-    },
-    {
-      feature: isEs ? "Motor nativo Rust + SQLite local" : "Native Rust + local SQLite speed",
+      feature: t(ct.rows.webhooks, locale),
       free: true,
       starter: true,
       pro: true,
       scale: true,
-      enterprise: true,
+    },
+    {
+      feature: t(ct.rows.teamMembers, locale),
+      free: t(ct.rows.unlimited, locale),
+      starter: t(ct.rows.unlimited, locale),
+      pro: t(ct.rows.unlimited, locale),
+      scale: t(ct.rows.unlimited, locale),
+    },
+    {
+      feature: t(ct.rows.cloudStorage, locale),
+      free: "25 MB",
+      starter: "500 MB",
+      pro: "10 GB",
+      scale: t(ct.rows.dedicatedCloud, locale),
+    },
+    {
+      feature: t(ct.rows.uspsPresort, locale),
+      free: false,
+      starter: false,
+      pro: true,
+      scale: true,
+    },
+    {
+      feature: t(ct.rows.apiAccess, locale),
+      free: false,
+      starter: false,
+      pro: true,
+      scale: true,
+    },
+    {
+      feature: t(ct.rows.nativeRust, locale),
+      free: true,
+      starter: true,
+      pro: true,
+      scale: true,
     },
   ];
 
@@ -95,12 +110,10 @@ export function PricingComparisonTable({ locale }: PricingComparisonTableProps) 
     <div className="w-full flex flex-col gap-6">
       <div className="text-center">
         <h3 className="text-2xl font-bold text-foreground">
-          {isEs ? "Comparativa Detallada de Planes" : "Detailed Feature Comparison"}
+          {t(ct.title, locale)}
         </h3>
         <p className="mt-1 text-sm text-dim">
-          {isEs
-            ? "Vea todas las capacidades disponibles en cada nivel de servicio"
-            : "Compare technical quotas, automation tools, and capabilities"}
+          {t(ct.subtitle, locale)}
         </p>
       </div>
 
@@ -109,13 +122,14 @@ export function PricingComparisonTable({ locale }: PricingComparisonTableProps) 
           <thead>
             <tr className="border-b border-line bg-muted/40">
               <th className="p-4 font-bold text-foreground min-w-[200px]">
-                {isEs ? "Característica" : "Feature"}
+                {t(ct.featureCol, locale)}
               </th>
-              <th className="p-4 font-bold text-foreground text-center">Free</th>
+              <th className="p-4 font-bold text-foreground text-center">
+                {t(ct.freeCol, locale)}
+              </th>
               <th className="p-4 font-bold text-foreground text-center">Starter</th>
               <th className="p-4 font-bold text-primary text-center">Professional</th>
               <th className="p-4 font-bold text-foreground text-center">Scale</th>
-              <th className="p-4 font-bold text-foreground text-center">Enterprise</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
@@ -123,7 +137,7 @@ export function PricingComparisonTable({ locale }: PricingComparisonTableProps) 
               <tr key={idx} className="hover:bg-muted/30 transition-colors">
                 <td className="p-4 font-medium text-foreground">{row.feature}</td>
 
-                {["free", "starter", "pro", "scale", "enterprise"].map((planKey) => {
+                {["free", "starter", "pro", "scale"].map((planKey) => {
                   const val = row[planKey as keyof typeof row];
                   return (
                     <td key={planKey} className="p-4 text-center text-dim font-mono text-xs">

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { t } from "@/lib/i18n/resolve";
 import { pricingContent } from "@/lib/content/pricing";
+import { getDynamicPricingPlans, getDynamicAddons } from "@/lib/stripe";
 import { PageShell } from "@/components/primitives/page-shell";
 import { PricingGrid } from "@/components/pricing/pricing-grid";
 import { PricingComparisonTable } from "@/components/pricing/pricing-comparison-table";
@@ -33,6 +34,12 @@ export default async function PricingPage({
   }
   const locale: Locale = lang;
 
+  // Dynamically pull active Stripe plans and addon packs strictly on the server
+  const [plans, addonPlan] = await Promise.all([
+    getDynamicPricingPlans(),
+    getDynamicAddons(),
+  ]);
+
   return (
     <PageShell
       eyebrow={t(pricingContent.eyebrow, locale)}
@@ -50,8 +57,8 @@ export default async function PricingPage({
           : "Unlimited Team Seats • Free Forever Tier Included"
       }
     >
-      <PricingGrid locale={locale} />
-      <PricingComparisonTable locale={locale} />
+      <PricingGrid locale={locale} plans={plans} addonPlan={addonPlan} />
+      <PricingComparisonTable locale={locale} plans={plans} />
       <PricingFaq locale={locale} />
       <CtaBanner locale={locale} />
     </PageShell>

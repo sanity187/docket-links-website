@@ -2,12 +2,12 @@ import { LocalizedNavItem, I18nString } from "./types";
 
 export const siteMeta = {
   descriptor: {
-    en: "Real-Time Court Docket Intelligence & Lead Automation",
-    es: "Inteligencia de Expedientes Judiciales y Automatización de Clientes en Tiempo Real",
+    en: "Court Docket Monitoring & Legal Marketing Leads",
+    es: "Monitoreo de Expedientes Judiciales y Prospectos de Mercadeo Legal",
   },
   description: {
-    en: "Empower your law firm with automated court docket scraping, instant lead qualification, CASS-certified USPS presorting, and high-performance native desktop speed.",
-    es: "Potencie su bufete de abogados con extracción automatizada de expedientes, calificación instantánea de clientes potenciales, preclasificación postal USPS certificada por CASS y rendimiento nativo de escritorio.",
+    en: "Empower your law firm with court docket monitoring across 500+ Pennsylvania courts, freshly filed cases pulled multiple times daily, verified contact enrichment, CASS-certified USPS presorting, and high-performance native desktop speed.",
+    es: "Potencie su bufete de abogados con monitoreo de expedientes en más de 500 tribunales de Pensilvania, casos recién radicados obtenidos varias veces al día, enriquecimiento de contactos verificados, preclasificación postal USPS certificada por CASS y rendimiento nativo de escritorio.",
   },
 };
 
@@ -15,7 +15,7 @@ export const navItems: LocalizedNavItem[] = [
   {
     key: "features",
     label: { en: "Features", es: "Funcionalidades" },
-    href: "/#features",
+    href: "/features",
   },
   {
     key: "tech",
@@ -69,12 +69,64 @@ export const commonActions = {
 
 export const footerContent = {
   tagline: {
-    en: "The lightning-fast court docket intelligence and automated direct-mail lead platform for forward-thinking law practices.",
-    es: "La plataforma ultrarrápida de inteligencia de expedientes judiciales y correspondencia directa para bufetes de abogados innovadores.",
+    en: "The lightning-fast court docket intelligence and marketing lead platform for forward-thinking law practices.",
+    es: "La plataforma ultrarrápida de inteligencia de expedientes judiciales y prospectos de mercadeo para bufetes de abogados innovadores.",
   },
   unlimitedSeatsBadge: {
     en: "Unlimited team members on every plan",
     es: "Miembros de equipo ilimitados en cada plan",
+  },
+  platformHeading: {
+    en: "Platform",
+    es: "Plataforma",
+  },
+  platformLinks: [
+    {
+      title: { en: "Real-Time Docket Feed", es: "Expedientes en Tiempo Real" },
+      href: "/features",
+    },
+    {
+      title: { en: "Native Rust Architecture", es: "Arquitectura Nativa Rust" },
+      href: "/#technology",
+    },
+    {
+      title: { en: "Pricing & Volume Rates", es: "Planes y Precios" },
+      href: "/pricing",
+    },
+    {
+      title: { en: "Download Native App", es: "Descargar Aplicación" },
+      href: "/download",
+    },
+  ],
+  practiceAreasHeading: {
+    en: "Practice Areas",
+    es: "Áreas de Práctica",
+  },
+  practiceAreasLinks: [
+    {
+      title: { en: "Criminal Defense (Title 18)", es: "Defensa Penal (Título 18)" },
+      href: "/features",
+    },
+    {
+      title: { en: "Traffic & DUI (Title 75)", es: "Tránsito y DUI (Título 75)" },
+      href: "/features",
+    },
+    {
+      title: { en: "Landlord-Tenant & Civil Claims", es: "Desahucios y Reclamos Civiles" },
+      href: "/features",
+    },
+    {
+      title: { en: "USPS CASS Direct Mail", es: "Preclasificación Postal CASS" },
+      href: "/#technology",
+    },
+  ],
+  contactHeading: {
+    en: "Contact & Support",
+    es: "Contacto y Soporte",
+  },
+  githubReleases: {
+    en: "GitHub Releases",
+    es: "Lanzamientos en GitHub",
   },
   copyright: {
     en: `© ${new Date().getFullYear()} DocketLinks LLC. All rights reserved.`,
