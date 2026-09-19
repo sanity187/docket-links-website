@@ -57,6 +57,10 @@ export const featuresContent = {
   },
 
   leadExplorer: {
+    workflowNoteLabel: {
+      en: "Workflow Note:",
+      es: "Próximo Paso del Flujo:",
+    },
     badge: {
       en: "Feature Spotlight: Step 1 in Your Marketing Pipeline",
       es: "Funcionalidad Destacada: Paso 1 en su Proceso de Mercadeo",

@@ -75,9 +75,9 @@ export default async function FeaturesPage({
                 {t(f.leadExplorer.description, locale)}
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20 max-w-sm text-xs leading-relaxed text-slate-300">
-              <span className="font-semibold text-blue-400 block mb-1">
-                {locale === "es" ? "Próximo Paso del Flujo:" : "Workflow Note:"}
+            <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-500/20 max-w-sm text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+              <span className="font-semibold text-blue-700 dark:text-blue-400 block mb-1">
+                {t(f.leadExplorer.workflowNoteLabel, locale)}
               </span>
               {t(f.leadExplorer.workflowNote, locale)}
             </div>
