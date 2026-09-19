@@ -761,6 +761,471 @@ export const featuresContent = {
     ] as MockClaimedLead[],
   },
 
+  rulesEngine: {
+    badge: {
+      en: "Exclusive Innovation: Automated Export Transforms",
+      es: "Innovación Exclusiva: Transformaciones Automáticas de Exportación",
+    },
+    title: {
+      en: "Dynamic Export Calculation & Regex Rules Engine",
+      es: "Motor Dinámico de Cálculos y Reglas Regex para Exportación",
+    },
+    description: {
+      en: "To our knowledge, no other lead engine or PA court aggregator provides an integrated formula and regex transformation pipeline. Automatically compute custom attorney retainer fees with min/max clamps, round to clean marketing figures, and classify debt collector plaintiffs with regex—injecting mail-merge ready columns straight into your direct mail export.",
+      es: "Hasta donde sabemos, ninguna otra plataforma de prospectos o agregador judicial en PA ofrece un motor integrado de fórmulas y regex. Calcule honorarios de retención con límites mínimos/máximos, redondee a cifras comerciales y clasifique demandantes de cobranza con regex, inyectando columnas listas para correo directo.",
+    },
+    highlights: [
+      {
+        id: "math-formulas",
+        title: { en: "Custom Fee Math Calculations", es: "Cálculos Matemáticos de Honorarios" },
+        description: {
+          en: "Calculate variable attorney fees directly from claim amounts (e.g. 20% retainer) or compute custom court cost buffers.",
+          es: "Calcule honorarios variables directamente desde los montos reclamados (ej. 20% de retención) o estime costos judiciales.",
+        },
+      },
+      {
+        id: "clamps-rounding",
+        title: { en: "Floors, Ceilings & Nearest Rounding", es: "Pisos, Techos y Redondeo al Más Cercano" },
+        description: {
+          en: "Enforce minimum floors ($400 min) and maximum caps ($1,800 max), and round up to the nearest $50 or $100 for professional marketing mailers.",
+          es: "Aplique pisos mínimos ($400) y topes máximos ($1,800), y redondee al $50 o $100 más cercano para cartas de captación profesionales.",
+        },
+      },
+      {
+        id: "regex-pattern",
+        title: { en: "Regex & Pattern Matching", es: "Regex y Coincidencia de Patrones" },
+        description: {
+          en: "Match institutional plaintiffs (Midland, LVNV, Portfolio Recovery) or specific statutes to route distinct letter copy.",
+          es: "Detecte demandantes institucionales (Midland, LVNV) o artículos de ley con regex para asignar redacciones específicas.",
+        },
+      },
+      {
+        id: "live-sandbox",
+        title: { en: "Interactive Sandbox & Rule Tester", es: "Banco de Pruebas y Simulador en Vivo" },
+        description: {
+          en: "Test formulas instantly against pre-loaded civil claims, debt collection filings, and criminal dockets with real-time feedback.",
+          es: "Pruebe fórmulas al instante con casos civiles, cobranzas de deudas y expedientes penales con resultados en tiempo real.",
+        },
+      },
+    ],
+
+    ui: {
+      settingsNav: {
+        settingsTitle: { en: "Settings", es: "Configuración" },
+        general: { en: "General", es: "General" },
+        exportRules: { en: "Export Rules", es: "Reglas de Exportación" },
+        integrations: { en: "Integrations", es: "Integraciones" },
+        team: { en: "Team", es: "Equipo" },
+        tenantAccount: { en: "Tenant Account", es: "Cuenta del Bufete" },
+        userAccount: { en: "User Account", es: "Cuenta de Usuario" },
+        about: { en: "About", es: "Acerca de" },
+      },
+      windowTitle: {
+        en: "DocketLinks Browser — Settings [Export Rules]",
+        es: "DocketLinks Browser — Configuración [Reglas de Exportación]",
+      },
+      pageHeader: {
+        title: {
+          en: "Export Calculation & Transform Rules",
+          es: "Reglas de Cálculo y Transformación de Exportación",
+        },
+        subtitle: {
+          en: "Configure custom headers, fee calculations, and conditional transformations applied when exporting claimed leads to CSV, Cloud Storage, or Direct Mail.",
+          es: "Configure encabezados personalizados, cálculos de tarifas y transformaciones condicionales al exportar prospectos a CSV, nube o correo directo.",
+        },
+        addRuleButton: { en: "+ Add Export Rule", es: "+ Agregar Regla" },
+        totalRules: { en: "Total Rules", es: "Reglas Totales" },
+        configuredHeader: { en: "Configured Export Rules", es: "Reglas de Exportación Configuradas" },
+        configuredSubtext: {
+          en: "Rules are evaluated in top-to-bottom priority order. The first matching rule produces the export value.",
+          es: "Las reglas se evalúan en orden de arriba a abajo. La primera regla coincidente produce el valor exportado.",
+        },
+      },
+      modal: {
+        title: { en: "Edit Export Rule", es: "Editar Regla de Exportación" },
+        subtitle: {
+          en: "Define conditional calculations and transformations applied to exported leads.",
+          es: "Defina cálculos condicionales y transformaciones aplicadas a prospectos exportados.",
+        },
+        ruleActive: { en: "Rule Active", es: "Regla Activa" },
+        ruleNameLabel: { en: "RULE NAME *", es: "NOMBRE DE REGLA *" },
+        targetColumnLabel: { en: "TARGET COLUMN HEADER *", es: "ENCABEZADO DE COLUMNA DESTINO *" },
+        targetColumnSubtext: { en: "appears as csv column header", es: "aparece como encabezado de columna csv" },
+        descriptionLabel: { en: "DESCRIPTION (OPTIONAL)", es: "DESCRIPCIÓN (OPCIONAL)" },
+        step1Title: { en: "1  When Lead Matches Condition", es: "1  Cuando el Caso Cumple la Condición" },
+        conditionModeLabel: { en: "Condition Mode:", es: "Modo de Condición:" },
+        matchAll: { en: "Match ALL Conditions (AND)", es: "Cumplir TODAS las Condiciones (AND)" },
+        matchAny: { en: "Match ANY Condition (OR)", es: "Cumplir CUALQUIER Condición (OR)" },
+        ifLabel: { en: "IF", es: "SI" },
+        andLabel: { en: "AND", es: "Y" },
+        exactCaseBadge: { en: "AA (Exact Case)", es: "AA (Caso Exacto)" },
+        addCondition: { en: "+ Add Condition Clause", es: "+ Agregar Cláusula" },
+        step2Title: { en: "2  Calculate or Produce Value", es: "2  Calcular o Producir Valor" },
+        tabs: {
+          math: { en: "Math Calculation", es: "Cálculo Matemático" },
+          fixed: { en: "Set Fixed Value", es: "Establecer Valor Fijo" },
+          copy: { en: "Copy Field", es: "Copiar Campo" },
+          template: { en: "Template String", es: "Cadena de Plantilla" },
+        },
+        sourceFieldLabel: { en: "Source Number Field", es: "Campo Numérico de Origen" },
+        operationLabel: { en: "Operation", es: "Operación" },
+        operandLabel: { en: "Operand (e.g., 0.2 for 20%)", es: "Operando (ej., 0.2 para 20%)" },
+        minClampLabel: { en: "Min Clamp (Floor)", es: "Límite Mínimo (Piso)" },
+        maxClampLabel: { en: "Max Clamp (Cap)", es: "Tope Máximo (Techo)" },
+        optionalBadge: { en: "Optional", es: "Opcional" },
+        outputFormatLabel: { en: "Output Format", es: "Formato de Salida" },
+        decimalPlacesLabel: { en: "Decimal Places", es: "Decimales" },
+        roundingModeLabel: { en: "Nearest Unit Rounding Mode", es: "Modo de Redondeo" },
+        roundingTargetLabel: { en: "Nearest Unit Target", es: "Objetivo de Redondeo" },
+        rawCentsToggle: {
+          en: "Input field is stored in raw cents / pennies (automatically divides by 100 before calculation)",
+          es: "El campo de entrada está en centavos crudos (divide entre 100 antes del cálculo automáticamente)",
+        },
+        step3Title: {
+          en: "3  Otherwise (Fallback when conditions do NOT match)",
+          es: "3  En Caso Contrario (Reserva cuando NO coinciden las condiciones)",
+        },
+        fallbackOptions: {
+          leaveBlank: { en: "Leave Blank / Empty Cell", es: "Dejar en Blanco / Celda Vacía" },
+          setZero: { en: "Set to $0.00 / Zero", es: "Establecer en $0.00 / Cero" },
+        },
+        liveTester: {
+          title: { en: "Live Rule Tester", es: "Probador de Reglas en Vivo" },
+          loadPreset: { en: "Load Preset:", es: "Cargar Preajuste:" },
+          sampleFieldsHeader: { en: "SAMPLE TEST LEAD FIELDS", es: "CAMPOS DE PRUEBA DEL CASO" },
+          evaluationResultHeader: { en: "Evaluation Result:", es: "Resultado de Evaluación:" },
+          matchedBadge: { en: "Matched Condition", es: "Condición Cumplida" },
+          unmatchedBadge: { en: "Fallback Applied", es: "Reserva Aplicada" },
+          targetColumnLabel: { en: "TARGET COLUMN:", es: "COLUMNA DESTINO:" },
+          matchedNotice: {
+            en: "Conditions matched successfully. Output calculated for column:",
+            es: "Condiciones cumplidas con éxito. Salida calculada para columna:",
+          },
+          unmatchedNotice: {
+            en: "Conditions did not match. Fallback applied: cell left blank.",
+            es: "Las condiciones no coincidieron. Reserva aplicada: celda en blanco.",
+          },
+        },
+        cancelButton: { en: "Cancel", es: "Cancelar" },
+        updateRuleButton: { en: "Update Rule", es: "Actualizar Regla" },
+      },
+      presets: [
+        {
+          id: "civil-dauphin",
+          label: { en: "Civil Claim ($5,000 in Dauphin)", es: "Demanda Civil ($5,000 en Dauphin)" },
+          county: "Dauphin",
+          caseType: "Civil Action",
+          caseStatus: "Active",
+          claimAmount: "5000.00",
+          plaintiff: "Midland Credit Management",
+          defendant: "John Doe",
+        },
+        {
+          id: "lvnv-debt",
+          label: { en: "LVNV Debt Collection", es: "Cobranza de Deuda LVNV" },
+          county: "Allegheny",
+          caseType: "Civil Action",
+          caseStatus: "Active",
+          claimAmount: "1850.00",
+          plaintiff: "LVNV Funding LLC",
+          defendant: "Jane Smith",
+        },
+        {
+          id: "criminal-dui",
+          label: { en: "Criminal Lead (DUI)", es: "Expediente Penal (DUI)" },
+          county: "Bucks",
+          caseType: "Criminal",
+          caseStatus: "Active",
+          claimAmount: "0.00",
+          plaintiff: "Commonwealth of Pennsylvania",
+          defendant: "Mark Wilson",
+        },
+      ],
+      configuredRulesList: [
+        {
+          id: "rule-1",
+          name: "Dauphin Civil Claim Fee (20% with min/max)",
+          targetColumn: "Calculated_Fee",
+          description: "Multiplies Claim Amount by 20% with min $400 and max $1,800 for Dauphin County Civil Actions",
+          conditionSummary: "if: county is_one_of 'Dauphin, Westmoreland, Allegheny' AND case_type contains 'Civil'",
+          isActive: true,
+        },
+      ],
+    },
+  },
+
+  analytics: {
+    badge: {
+      en: "Data Intelligence: Know Your Market",
+      es: "Inteligencia de Datos: Conozca Su Mercado",
+    },
+    title: {
+      en: "Robust Analytics & Statewide Filing Intelligence",
+      es: "Analíticas Robustas e Inteligencia de Radicaciones Estatal",
+    },
+    description: {
+      en: "Monitor over 1 million annual Pennsylvania court filings with real-time dashboards. Interactive county heatmaps, filings-over-time trend lines, top counties and courts breakdowns, most common charges analysis, and top plaintiff tracking give your practice the data-driven edge to identify high-yield marketing regions before competitors.",
+      es: "Monitoree más de 1 millón de radicaciones judiciales anuales de Pensilvania con paneles en tiempo real. Mapas de calor por condado, tendencias de radicaciones, desglose de condados y tribunales principales, análisis de cargos más comunes y seguimiento de demandantes principales le dan a su firma la ventaja basada en datos.",
+    },
+    highlights: [
+      {
+        id: "heatmap",
+        title: { en: "Interactive PA County Heatmap", es: "Mapa de Calor Interactivo de Condados" },
+        description: {
+          en: "Visualize filing density across all 67 Pennsylvania counties with color-coded intensity mapping. Filter by case type to reveal geographic hotspots.",
+          es: "Visualice la densidad de radicaciones en los 67 condados de PA con mapeo de intensidad por color. Filtre por tipo de caso para revelar zonas activas.",
+        },
+      },
+      {
+        id: "trends",
+        title: { en: "Filings Over Time Trends", es: "Tendencias de Radicaciones en el Tiempo" },
+        description: {
+          en: "Daily, weekly, and monthly trend lines broken down by case type. Spot seasonal patterns and identify when to ramp up your direct mail campaigns.",
+          es: "Líneas de tendencia diarias, semanales y mensuales por tipo de caso. Detecte patrones estacionales y determine cuándo intensificar sus campañas.",
+        },
+      },
+      {
+        id: "top-courts",
+        title: { en: "Top Courts & Plaintiff Tracking", es: "Tribunales y Demandantes Principales" },
+        description: {
+          en: "Ranked breakdowns of the busiest MDJ courts, most common charges, and top institutional plaintiffs (Capital One, Barclays, Synchrony, LVNV).",
+          es: "Rankings de los tribunales MDJ más activos, cargos más comunes y demandantes institucionales principales (Capital One, Barclays, Synchrony, LVNV).",
+        },
+      },
+      {
+        id: "kpis",
+        title: { en: "Real-Time KPI Summary Cards", es: "Tarjetas KPI en Tiempo Real" },
+        description: {
+          en: "At-a-glance stats: 28,300 filed this week, 87,483 this month, 1,031,126 year-to-date, plus average daily breakdowns for Criminal (346), Traffic (3,072), and Civil (398).",
+          es: "Estadísticas instantáneas: 28,300 esta semana, 87,483 este mes, 1,031,126 en el año, más promedios diarios para Penal (346), Tránsito (3,072) y Civil (398).",
+        },
+      },
+    ],
+    ui: {
+      windowTitle: {
+        en: "DocketLinks Browser — [Analytics]",
+        es: "DocketLinks Browser — [Analíticas]",
+      },
+      pageTitle: { en: "Analytics", es: "Analíticas" },
+      pageSubtitle: {
+        en: "Analyze case filings, trends, and statistics across your data",
+        es: "Analice radicaciones, tendencias y estadísticas de su data",
+      },
+      lastUpdated: { en: "Last updated Sep 19, 1:24 PM", es: "Última act. Sep 19, 1:24 PM" },
+      refreshData: { en: "Refresh Data", es: "Actualizar Datos" },
+      resetFilters: { en: "Reset Filters", es: "Restablecer Filtros" },
+      heatmapTitle: { en: "Pennsylvania Filing Heatmap", es: "Mapa de Calor de Radicaciones de Pennsylvania" },
+      allCaseTypes: { en: "All Case Types", es: "Todos los Tipos" },
+      heatmapLow: { en: "Low", es: "Bajo" },
+      heatmapMore: { en: "More", es: "Alto" },
+      filingsOverTime: { en: "Filings Over Time", es: "Radicaciones en el Tiempo" },
+      daily: { en: "Daily", es: "Diario" },
+      weekly: { en: "Weekly", es: "Semanal" },
+      monthly: { en: "Monthly", es: "Mensual" },
+      filingsByCaseType: { en: "Filings by Case Type", es: "Radicaciones por Tipo" },
+      topCounties: { en: "Top 10 Counties", es: "Top 10 Condados" },
+      topPlaintiffs: { en: "Top Plaintiffs", es: "Demandantes Principales" },
+      mostCommonCharges: { en: "Most Common Charges", es: "Cargos Más Comunes" },
+      caseTypesFilter: { en: "Case Types", es: "Tipos de Caso" },
+      kpis: [
+        { label: { en: "Filed This Week", es: "Radicados Esta Semana" }, value: "28,300", sub: { en: "Past 7 days", es: "Últimos 7 días" } },
+        { label: { en: "Filed This Month", es: "Radicados Este Mes" }, value: "87,483", sub: { en: "Month to date", es: "Mes a la fecha" } },
+        { label: { en: "Filed This Year", es: "Radicados Este Año" }, value: "1,031,126", sub: { en: "Year to date", es: "Año a la fecha" } },
+        { label: { en: "Avg Daily Criminal", es: "Promedio Diario Penal" }, value: "346", sub: { en: "Past 30 days", es: "Últimos 30 días" } },
+        { label: { en: "Avg Daily Traffic", es: "Promedio Diario Tránsito" }, value: "3,072", sub: { en: "Past 30 days", es: "Últimos 30 días" } },
+        { label: { en: "Avg Daily Civil", es: "Promedio Diario Civil" }, value: "398", sub: { en: "Past 30 days", es: "Últimos 30 días" } },
+      ],
+      caseTypeNames: {
+        traffic: { en: "Traffic", es: "Tránsito" },
+        civil: { en: "Civil", es: "Civil" },
+        nonTraffic: { en: "Non-Traffic", es: "No Tránsito" },
+        criminal: { en: "Criminal", es: "Penal" },
+        landlordTenant: { en: "Landlord/Tenant", es: "Inquilino" },
+      },
+    },
+  },
+
+  cloudStorage: {
+    badge: {
+      en: "Secure Cloud Infrastructure",
+      es: "Infraestructura Segura en la Nube",
+    },
+    title: {
+      en: "Integrated Cloud Storage & File Management",
+      es: "Almacenamiento en la Nube y Gestión de Archivos Integrado",
+    },
+    description: {
+      en: "Every DocketLinks subscription includes dedicated cloud storage for your firm. Automatically sync exported leads, generated letters, and CASS-certified address files to organized cloud folders. Access exports from any device, share with team members, and maintain a complete audit trail of all marketing campaign files.",
+      es: "Cada suscripción de DocketLinks incluye almacenamiento dedicado en la nube para su bufete. Sincronice automáticamente exportaciones, cartas generadas y archivos de direcciones certificados CASS. Acceda desde cualquier dispositivo, comparta con el equipo y mantenga un historial completo de archivos de campaña.",
+    },
+    highlights: [
+      {
+        id: "sync",
+        title: { en: "Automatic Export Sync", es: "Sincronización Automática de Exportaciones" },
+        description: {
+          en: "CSV exports, letter templates, and CASS-validated address files sync directly to your cloud storage with zero manual upload steps.",
+          es: "Exportaciones CSV, plantillas de cartas y archivos CASS se sincronizan directamente a su almacenamiento en la nube sin pasos manuales.",
+        },
+      },
+      {
+        id: "organization",
+        title: { en: "Organized File Structure", es: "Estructura Organizada de Archivos" },
+        description: {
+          en: "Pre-configured folders for documents, exports, uploads, and user files. Create custom folders for campaign-specific organization.",
+          es: "Carpetas preconfiguradas para documentos, exportaciones, cargas y archivos de usuario. Cree carpetas personalizadas para campañas.",
+        },
+      },
+      {
+        id: "quota",
+        title: { en: "Generous Storage Quotas", es: "Cuotas Generosas de Almacenamiento" },
+        description: {
+          en: "Up to 5 GB of included cloud storage with real-time usage tracking. Storage dashboard shows exactly how much space remains.",
+          es: "Hasta 5 GB de almacenamiento incluido con seguimiento de uso en tiempo real. El panel muestra exactamente cuánto espacio queda.",
+        },
+      },
+      {
+        id: "access",
+        title: { en: "Cross-Device Access", es: "Acceso Multi-Dispositivo" },
+        description: {
+          en: "Access your exported files from any workstation in your office. All team members on the same tenant see the same synced file library.",
+          es: "Acceda a sus archivos exportados desde cualquier estación de trabajo. Todos los miembros del equipo ven la misma biblioteca sincronizada.",
+        },
+      },
+    ],
+  },
+
+  aiLetterGenerator: {
+    badge: {
+      en: "AI-Powered Marketing: Mail-Merge Ready",
+      es: "Marketing con IA: Listo para Combinación de Correspondencia",
+    },
+    title: {
+      en: "AI Letter Generator with Microsoft Word Mail-Merge Placeholders",
+      es: "Generador de Cartas con IA y Marcadores para Combinación de Correspondencia de Word",
+    },
+    description: {
+      en: "Generate professionally crafted solicitation letters for DUI defense, debt collection response, landlord/tenant disputes, and more—instantly. The AI produces polished legal marketing copy with embedded Microsoft Word mail-merge fields ({{first_name}}, {{county}}, {{charge_code}}) so you can drop the template directly into Word, connect your enriched CSV, and print personalized letters at scale.",
+      es: "Genere cartas de captación profesionales para defensa de DUI, respuesta a cobranzas, disputas de arrendamiento y más—al instante. La IA produce textos de mercadeo legal pulidos con campos de combinación de correspondencia de Word ({{nombre}}, {{condado}}, {{cargo}}) para que pueda insertar la plantilla en Word, conectar su CSV enriquecido e imprimir cartas personalizadas a escala.",
+    },
+    highlights: [
+      {
+        id: "letter-types",
+        title: { en: "Specialized Letter Types", es: "Tipos de Carta Especializados" },
+        description: {
+          en: "Pre-configured templates for DUI Defense, Traffic Violations, Civil Debt Response, and Custom letters. Each tuned for the specific legal context.",
+          es: "Plantillas preconfiguradas para Defensa de DUI, Infracciones de Tránsito, Respuesta a Deudas Civiles y Cartas Personalizadas, cada una adaptada al contexto legal.",
+        },
+      },
+      {
+        id: "mail-merge",
+        title: { en: "Word Mail-Merge Fields", es: "Campos de Combinación de Correspondencia" },
+        description: {
+          en: "All generated letters include {{placeholder}} tokens for first_name, last_name, street_address, county, filing_date, charge_code, judge, court, and more.",
+          es: "Todas las cartas incluyen tokens {{marcador}} para nombre, apellido, dirección, condado, fecha_radicación, código_cargo, juez, tribunal y más.",
+        },
+      },
+      {
+        id: "customization",
+        title: { en: "Custom AI Prompts", es: "Instrucciones Personalizadas de IA" },
+        description: {
+          en: "Toggle on custom prompt mode to fine-tune tone, add firm-specific language, emphasize practice areas, or adjust the call-to-action for your target audience.",
+          es: "Active el modo de instrucciones personalizadas para ajustar el tono, agregar lenguaje específico de su firma o modificar el llamado a la acción.",
+        },
+      },
+      {
+        id: "history",
+        title: { en: "Generation History & Quota", es: "Historial de Generaciones y Cuota" },
+        description: {
+          en: "Track all generated letters with timestamps and status. Included AI generation quota (10,000 generations) with real-time usage counter.",
+          es: "Rastree todas las cartas generadas con fechas y estado. Cuota incluida de generación IA (10,000 generaciones) con contador de uso en tiempo real.",
+        },
+      },
+    ],
+    ui: {
+      windowTitle: {
+        en: "DocketLinks Browser — [AI Letter Generator]",
+        es: "DocketLinks Browser — [Generador de Cartas IA]",
+      },
+      pageHeader: {
+        title: { en: "AI Letter Generator", es: "Generador de Cartas con IA" },
+        subtitle: {
+          en: "Generate mail merge templates for Microsoft Word using AI",
+          es: "Genere plantillas de combinación de correspondencia para Microsoft Word con IA",
+        },
+      },
+      quotaBadge: {
+        en: "10,000 / 10,000 generations",
+        es: "10,000 / 10,000 generaciones",
+      },
+      generatePanel: {
+        title: { en: "Generate Letter", es: "Generar Carta" },
+        letterTypeLabel: { en: "Letter Type", es: "Tipo de Carta" },
+        customPromptLabel: { en: "Customize Prompt", es: "Personalizar Instrucciones" },
+        customPromptSubtext: {
+          en: "Edit the default prompt to customize the letter",
+          es: "Edite la instrucción predeterminada para personalizar la carta",
+        },
+        generateButton: { en: "Generate Letter", es: "Generar Carta" },
+        placeholdersTitle: { en: "Available Placeholders", es: "Marcadores Disponibles" },
+        placeholdersSubtext: {
+          en: "These merge fields will be replaced with lead data in Word",
+          es: "Estos campos se reemplazarán con datos del caso en Word",
+        },
+      },
+      previewPanel: {
+        title: { en: "Generated Letter", es: "Carta Generada" },
+        downloadButton: { en: "Download", es: "Descargar" },
+        copyButton: { en: "Copy", es: "Copiar" },
+        copyNotice: {
+          en: "Copy this content and paste it into Microsoft Word. Use Mail Merge to replace the placeholders with your lead data.",
+          es: "Copie este contenido y péguelo en Microsoft Word. Use Combinación de Correspondencia para reemplazar los marcadores con sus datos.",
+        },
+      },
+      recentPanel: {
+        title: { en: "Recent Generations", es: "Generaciones Recientes" },
+        completed: { en: "Completed", es: "Completado" },
+      },
+      letterTypes: [
+        { id: "dui", label: { en: "DUI Defense", es: "Defensa de DUI" }, description: { en: "Letter template for individuals charged with DUI", es: "Plantilla para personas acusadas de DUI" } },
+        { id: "traffic", label: { en: "Traffic Letter", es: "Carta de Tránsito" }, description: { en: "Letter template for traffic violations", es: "Plantilla para infracciones de tránsito" } },
+        { id: "civil", label: { en: "Civil Defense", es: "Defensa Civil" }, description: { en: "Letter template for civil action defendants", es: "Plantilla para demandados en acciones civiles" } },
+        { id: "custom", label: { en: "Custom Letter", es: "Carta Personalizada" }, description: { en: "Fully customizable letter template", es: "Plantilla de carta completamente personalizable" } },
+      ],
+      placeholders: [
+        "{{first_name}}", "{{last_name}}", "{{filing_date}}", "{{county}}", "{{judge}}",
+        "{{court}}", "{{charge_code}}", "{{docket_number}}", "{{next_hearing_date}}", "{{street_address}}",
+      ],
+      recentGenerations: [
+        { id: "r1", name: "Custom Letter", date: "4/28/2026, 3:11:31 PM" },
+        { id: "r2", name: "DUI Letter", date: "2/12/26, 6:32:50 PM" },
+        { id: "r3", name: "Traffic Letter", date: "1/19/2026, 4:28:55 AM" },
+        { id: "r4", name: "DUI Letter", date: "1/16/2026, 4:25:24 AM" },
+      ],
+      sampleLetterContent: [
+        "**[Law Firm Letterhead]**",
+        "[Law Firm Name]",
+        "[Street Address]",
+        "[City, State ZIP]",
+        "Phone: (XXX) XXX-XXXX Fax: (XXX) XXX-XXXX",
+        "email: info@[lawfirm].com",
+        "",
+        "{{filing_date}}",
+        "",
+        "{{first_name}} {{last_name}}",
+        "[Street Address]",
+        "[City, State ZIP]",
+        "",
+        "Dear {{first_name}} {{last_name}},",
+        "",
+        "We understand that receiving notice of a **{{charge_code}}** DUI charge can be stressful and confusing. Our team is dedicated to providing the support and skilled representation you deserve during this challenging time.",
+        "",
+        "According to the records we have received, you were arrested by **{{arresting_agency}}** in **{{township}}, {{county}} County** on **{{filing_date}}**. Your case is currently scheduled before **Judge {{judge}}** in **{{court}}**.",
+        "",
+        "**How We Can Help**",
+      ],
+    },
+  },
+
   upcomingFeatures: {
     eyebrow: {
       en: "COMPLETE DESKTOP ECOSYSTEM",
@@ -818,3 +1283,4 @@ export const featuresContent = {
     ],
   },
 };
+

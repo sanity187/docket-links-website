@@ -6,6 +6,9 @@ import { featuresContent } from "@/lib/content/features";
 import { PageShell } from "@/components/primitives/page-shell";
 import { LeadExplorerPreview } from "@/components/features/lead-explorer-preview";
 import { ClaimedLeadsPreview } from "@/components/features/claimed-leads-preview";
+import { ExportRulesPreview } from "@/components/features/export-rules-preview";
+import { AnalyticsPreview } from "@/components/features/analytics-preview";
+import { AILetterPreview } from "@/components/features/ai-letter-preview";
 import { CtaBanner } from "@/components/home/cta-banner";
 import {
   Search,
@@ -17,6 +20,10 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
+  Calculator,
+  BarChart3,
+  Cloud,
+  FileText,
 } from "lucide-react";
 
 export async function generateMetadata({
@@ -102,7 +109,6 @@ export default async function FeaturesPage({
 
         {/* Section 2: Claimed Leads, Enrichment & CRM Workspace */}
         <section className="flex flex-col gap-8 w-full pt-12 border-t border-border/40">
-          {/* Header Narrative */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
             <div className="max-w-3xl space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 border border-purple-500/20 text-purple-400">
@@ -118,7 +124,6 @@ export default async function FeaturesPage({
             </div>
           </div>
 
-          {/* Highlights Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {f.claimedLeads.highlights.map((h) => (
               <div
@@ -136,13 +141,174 @@ export default async function FeaturesPage({
             ))}
           </div>
 
-          {/* Interactive Recreated Claimed Leads & Drawer UI */}
           <div className="w-full">
             <ClaimedLeadsPreview locale={locale} />
           </div>
         </section>
 
-        {/* Section 3: Ecosystem & Upcoming Feature Deep Dives */}
+        {/* Section 3: Export Calculation & Rules Engine */}
+        <section className="flex flex-col gap-8 w-full pt-12 border-t border-border/40">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                <Calculator className="w-3.5 h-3.5" />
+                <span>{t(f.rulesEngine.badge, locale)}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                {t(f.rulesEngine.title, locale)}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                {t(f.rulesEngine.description, locale)}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {f.rulesEngine.highlights.map((h) => (
+              <div
+                key={h.id}
+                className="p-4 rounded-xl bg-card/60 border border-border/60 hover:border-amber-500/30 transition-all flex flex-col gap-2"
+              >
+                <div className="flex items-center gap-2 text-amber-400 font-semibold text-sm">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-amber-400" />
+                  <span>{t(h.title, locale)}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {t(h.description, locale)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full">
+            <ExportRulesPreview locale={locale} />
+          </div>
+        </section>
+
+        {/* Section 4: AI Letter Generator */}
+        <section className="flex flex-col gap-8 w-full pt-12 border-t border-border/40">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                <FileText className="w-3.5 h-3.5" />
+                <span>{t(f.aiLetterGenerator.badge, locale)}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                {t(f.aiLetterGenerator.title, locale)}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                {t(f.aiLetterGenerator.description, locale)}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {f.aiLetterGenerator.highlights.map((h) => (
+              <div
+                key={h.id}
+                className="p-4 rounded-xl bg-card/60 border border-border/60 hover:border-emerald-500/30 transition-all flex flex-col gap-2"
+              >
+                <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
+                  <span>{t(h.title, locale)}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {t(h.description, locale)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full">
+            <AILetterPreview locale={locale} />
+          </div>
+        </section>
+
+        {/* Section 5: Analytics Dashboard */}
+        <section className="flex flex-col gap-8 w-full pt-12 border-t border-border/40">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                <BarChart3 className="w-3.5 h-3.5" />
+                <span>{t(f.analytics.badge, locale)}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                {t(f.analytics.title, locale)}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                {t(f.analytics.description, locale)}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {f.analytics.highlights.map((h) => (
+              <div
+                key={h.id}
+                className="p-4 rounded-xl bg-card/60 border border-border/60 hover:border-cyan-500/30 transition-all flex flex-col gap-2"
+              >
+                <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-cyan-400" />
+                  <span>{t(h.title, locale)}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {t(h.description, locale)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full">
+            <AnalyticsPreview locale={locale} />
+          </div>
+        </section>
+
+        {/* Section 6: Cloud Storage */}
+        <section className="flex flex-col gap-8 w-full pt-12 border-t border-border/40">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 border border-sky-500/20 text-sky-400">
+                <Cloud className="w-3.5 h-3.5" />
+                <span>{t(f.cloudStorage.badge, locale)}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                {t(f.cloudStorage.title, locale)}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                {t(f.cloudStorage.description, locale)}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {f.cloudStorage.highlights.map((h) => (
+              <div
+                key={h.id}
+                className="p-4 rounded-xl bg-card/60 border border-border/60 hover:border-sky-500/30 transition-all flex flex-col gap-2"
+              >
+                <div className="flex items-center gap-2 text-sky-400 font-semibold text-sm">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-sky-400" />
+                  <span>{t(h.title, locale)}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {t(h.description, locale)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Cloud Storage Screenshot */}
+          {/* <div className="w-full rounded-2xl border border-border/80 overflow-hidden shadow-2xl shadow-black/80"> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/* <img
+              src="/images/app-cloud-storage.png"
+              alt="DocketLinks Cloud Storage — File management with organized folders for documents, exports, uploads, and user files"
+              className="w-full h-auto"
+            /> */}
+          {/* </div> */}
+        </section>
+
+        {/* Section 7: Ecosystem & Upcoming Feature Cards */}
         <section className="flex flex-col gap-8 w-full pt-8 border-t border-border/40">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
@@ -194,7 +360,7 @@ export default async function FeaturesPage({
           </div>
         </section>
 
-        {/* Section 3: Call to Action Banner */}
+        {/* CTA Banner */}
         <CtaBanner locale={locale} />
       </div>
     </PageShell>
