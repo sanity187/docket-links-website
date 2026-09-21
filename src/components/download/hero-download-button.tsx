@@ -3,23 +3,24 @@
 import { Download, Monitor, Apple, Terminal, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { type Locale } from "@/lib/i18n/config";
-import { downloadContent } from "@/lib/content/download";
+import { type PlatformDownloadInfo } from "@/lib/content/download";
 import { useDetectedOS } from "./os-detector";
 import { Button } from "@/components/ui/button";
 
 interface HeroDownloadButtonProps {
   locale: Locale;
+  platforms: PlatformDownloadInfo[];
+  version: string;
   className?: string;
 }
 
-export function HeroDownloadButton({ locale, className }: HeroDownloadButtonProps) {
+export function HeroDownloadButton({ locale, platforms, version, className }: HeroDownloadButtonProps) {
   const detectedOS = useDetectedOS();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const currentPlatform =
-    downloadContent.platforms.find((p) => p.id === detectedOS) ||
-    downloadContent.platforms[0];
+    platforms.find((p) => p.id === detectedOS) || platforms[0];
 
   useEffect(() => {
     const handleOutside = (e: MouseEvent) => {
@@ -59,7 +60,7 @@ export function HeroDownloadButton({ locale, className }: HeroDownloadButtonProp
               : `Download for ${currentPlatform.name}`}
           </span>
           <span className="text-[10px] font-normal opacity-85">
-            {currentPlatform.recommendedExt} • v{downloadContent.version}
+            {currentPlatform.recommendedExt} • v{version}
           </span>
         </div>
       </a>
@@ -73,9 +74,8 @@ export function HeroDownloadButton({ locale, className }: HeroDownloadButtonProp
         className="inline-flex h-[52px] items-center justify-center rounded-r-xl border-l border-white/20 bg-secondary px-3 text-primary-foreground hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
       >
         <ChevronDown
-          className={`h-4 w-4 transition-transform duration-200 ${
-            dropdownOpen ? "rotate-180" : ""
-          }`}
+          className={`h-4 w-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -87,7 +87,7 @@ export function HeroDownloadButton({ locale, className }: HeroDownloadButtonProp
           </div>
 
           <div className="flex flex-col gap-1">
-            {downloadContent.platforms.map((platform) => (
+            {platforms.map((platform) => (
               <a
                 key={platform.id}
                 href={platform.primaryUrl}

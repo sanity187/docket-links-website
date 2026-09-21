@@ -3,16 +3,17 @@
 import { Monitor, Apple, Terminal, Download, ShieldCheck, HardDrive, CheckCircle2 } from "lucide-react";
 import { type Locale } from "@/lib/i18n/config";
 import { t } from "@/lib/i18n/resolve";
-import { downloadContent, PlatformDownloadInfo } from "@/lib/content/download";
+import { type PlatformDownloadInfo } from "@/lib/content/download";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 interface PlatformDownloadCardsProps {
   locale: Locale;
+  platforms: PlatformDownloadInfo[];
 }
 
-export function PlatformDownloadCards({ locale }: PlatformDownloadCardsProps) {
+export function PlatformDownloadCards({ locale, platforms }: PlatformDownloadCardsProps) {
   const getIcon = (id: PlatformDownloadInfo["id"]) => {
     switch (id) {
       case "windows":
@@ -26,7 +27,7 @@ export function PlatformDownloadCards({ locale }: PlatformDownloadCardsProps) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
-      {downloadContent.platforms.map((platform) => (
+      {platforms.map((platform) => (
         <Card
           key={platform.id}
           className="flex flex-col justify-between border-line bg-panel/80 backdrop-blur-sm hover:border-primary/40 hover:shadow-xl transition-all duration-300"

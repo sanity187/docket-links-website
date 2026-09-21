@@ -8,9 +8,11 @@ import { Badge } from "@/components/ui/badge";
 
 interface ReleaseNotesCardProps {
   locale: Locale;
+  version: string;
+  releaseDate: string;
 }
 
-export function ReleaseNotesCard({ locale }: ReleaseNotesCardProps) {
+export function ReleaseNotesCard({ locale, version, releaseDate }: ReleaseNotesCardProps) {
   return (
     <Card className="border-primary/20 bg-gradient-to-br from-panel via-panel to-primary/5 p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-line pb-6">
@@ -18,14 +20,14 @@ export function ReleaseNotesCard({ locale }: ReleaseNotesCardProps) {
           <div className="flex items-center gap-2">
             <Badge variant="default" className="gap-1">
               <Sparkles className="h-3 w-3" />
-              v{downloadContent.version}
+              v{version}
             </Badge>
             <span className="text-xs text-dim">
-              {downloadContent.releaseDate}
+              {releaseDate}
             </span>
           </div>
           <h3 className="mt-2 text-xl font-bold text-foreground">
-            {t(downloadContent.releaseNotesHeading, locale)}
+            {t(downloadContent.releaseNotesHeading, locale)} v{version}
           </h3>
         </div>
 

@@ -7,10 +7,13 @@ export interface PlatformDownloadInfo {
   recommendedExt: string;
   primaryUrl: string;
   primaryLabel: I18nString;
+  /** Key in the Tauri update feed (`latest.json`) used to resolve the live URL. */
+  feedKey?: string;
   secondaryOptions: {
     label: I18nString;
     format: string;
     url: string;
+    feedKey?: string;
   }[];
   architecture: string;
   requirements: I18nString;
@@ -49,11 +52,13 @@ export const downloadContent = {
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_x64-setup.exe",
       primaryLabel: { en: "Download", es: "Descargar" },
+      feedKey: "windows-x86_64-nsis",
       secondaryOptions: [
         {
           label: { en: "Enterprise MSI Package (.msi)", es: "Paquete Empresarial MSI (.msi)" },
           format: "MSI Installer",
           url: "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_x64_en-US.msi",
+          feedKey: "windows-x86_64-msi",
         },
       ],
       architecture: "x86_64",
@@ -71,11 +76,13 @@ export const downloadContent = {
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_aarch64.app.tar.gz",
       primaryLabel: { en: "Download", es: "Descargar" },
+      feedKey: "darwin-aarch64",
       secondaryOptions: [
         {
           label: { en: "macOS Intel 64-bit (.app.tar.gz)", es: "macOS Intel 64 bits (.app.tar.gz)" },
           format: "Intel x86_64",
           url: "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_x64.app.tar.gz",
+          feedKey: "darwin-x86_64",
         },
       ],
       architecture: "Universal / ARM64 & x64",
@@ -93,16 +100,19 @@ export const downloadContent = {
       primaryUrl:
         "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_amd64.AppImage",
       primaryLabel: { en: "Download", es: "Descargar" },
+      feedKey: "linux-x86_64-appimage",
       secondaryOptions: [
         {
           label: { en: "Debian / Ubuntu (.deb)", es: "Debian / Ubuntu (.deb)" },
           format: "DEB Package",
           url: "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1_amd64.deb",
+          feedKey: "linux-x86_64-deb",
         },
         {
           label: { en: "Fedora / RedHat (.rpm)", es: "Fedora / RedHat (.rpm)" },
           format: "RPM Package",
           url: "https://docket-links-browser.nyc3.digitaloceanspaces.com/updates/v1.14.1/DocketLinks.Browser_1.14.1-1.x86_64.rpm",
+          feedKey: "linux-x86_64-rpm",
         },
       ],
       architecture: "x86_64",
@@ -114,8 +124,8 @@ export const downloadContent = {
     },
   ] as PlatformDownloadInfo[],
   releaseNotesHeading: {
-    en: "What's New in v1.14.1",
-    es: "Novedades en la Versión 1.14.1",
+    en: "What's New in",
+    es: "Novedades en la versión",
   },
   releaseNotes: [
     {

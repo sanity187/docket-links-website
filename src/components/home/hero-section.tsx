@@ -8,13 +8,17 @@ import { commonActions } from "@/lib/content/common";
 import { Eyebrow } from "@/components/primitives/eyebrow";
 import { Button } from "@/components/ui/button";
 import { HeroDownloadButton } from "@/components/download/hero-download-button";
+import { getLatestRelease, resolveDownloadContent } from "@/lib/download/release";
 import { InteractiveAppPreview } from "./interactive-app-preview";
 
 interface HeroSectionProps {
   locale: Locale;
 }
 
-export function HeroSection({ locale }: HeroSectionProps) {
+export async function HeroSection({ locale }: HeroSectionProps) {
+  const release = await getLatestRelease();
+  const download = resolveDownloadContent(release, locale);
+
   return (
     <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
       {/* Background Ambient Glows */}
@@ -50,7 +54,11 @@ export function HeroSection({ locale }: HeroSectionProps) {
 
         {/* Action Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center">
-          <HeroDownloadButton locale={locale} />
+          <HeroDownloadButton
+            locale={locale}
+            platforms={download.platforms}
+            version={download.version}
+          />
 
           <Link href={localizedPath(locale, "/pricing")}>
             <Button variant="outline" size="lg" className="rounded-xl px-6 font-semibold gap-2">
